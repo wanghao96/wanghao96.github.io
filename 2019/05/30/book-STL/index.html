@@ -96,14 +96,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="第1章 STL概论与版本简介STL六大组件:container，alorithm，iterator，functor，adapter，allocator1) 容器：各种数据结构，vector,list,deque,set,map等，用来存放数据，是一种class template2) 算法：常用算法如sort,search,copy,erase…，是一种function template3) 迭代器">
+<meta name="keywords" content="读书笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STL源码剖析">
+<meta property="og:url" content="http://yoursite.com/2019/05/30/book-STL/index.html">
 <meta property="og:site_name" content="HexoBlog">
+<meta property="og:description" content="第1章 STL概论与版本简介STL六大组件:container，alorithm，iterator，functor，adapter，allocator1) 容器：各种数据结构，vector,list,deque,set,map等，用来存放数据，是一种class template2) 算法：常用算法如sort,search,copy,erase…，是一种function template3) 迭代器">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T04:04:21.318Z">
+<meta property="og:updated_time" content="2019-05-30T07:24:03.230Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Categories">
+<meta name="twitter:title" content="STL源码剖析">
+<meta name="twitter:description" content="第1章 STL概论与版本简介STL六大组件:container，alorithm，iterator，functor，adapter，allocator1) 容器：各种数据结构，vector,list,deque,set,map等，用来存放数据，是一种class template2) 算法：常用算法如sort,search,copy,erase…，是一种function template3) 迭代器">
 
 
 
@@ -111,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/categories/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/30/book-STL/">
 
 
 
@@ -121,7 +125,7 @@
   };
 </script>
 
-  <title>Categories | HexoBlog</title>
+  <title>STL源码剖析 | HexoBlog</title>
   
 
 
@@ -241,7 +245,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
 
     
     
@@ -300,84 +304,190 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/30/book-STL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Hao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HexoBlog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">Categories
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
+          <h1 class="post-title" itemprop="name headline">STL源码剖析
+
               
-              
-              暂无分类
-            </div>
-            <div class="category-all">
-              
-            </div>
-          </div>
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-30 14:11:47 / 修改时间：15:24:03" itemprop="dateCreated datePublished" datetime="2019-05-30T14:11:47+08:00">2019-05-30</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="第1章-STL概论与版本简介"><a href="#第1章-STL概论与版本简介" class="headerlink" title="第1章 STL概论与版本简介"></a>第1章 STL概论与版本简介</h2><p>STL六大组件:container，alorithm，iterator，functor，adapter，allocator<br>1) 容器：各种数据结构，vector,list,deque,set,map等，用来存放数据，是一种class template<br>2) 算法：常用算法如sort,search,copy,erase…，是一种function template<br>3) 迭代器：扮演容器与算法之间的胶合剂，是所谓的“泛型指针”，将operator*，operator–，operator++等指针操作进行重载，class template<br>4) 仿函数：行为类似函数，类似函数指针，重载operator()的class或class template<br>5) 配接器：用来修饰容器或仿函数或迭代器接口<br>6) 配置器：负责空间配置与管理，实现动态空间配置、空间管理、空间释放，class template</p>
+<p>STL实现版本</p>
+<ul>
+<li>HP实现版本，鼻祖，HewlettPackard，开源</li>
+<li>P.J.Plauger版本，Visual C++采用，可读性较低，符号命名不讲究。</li>
+<li>RougeWave版本，C++ Builder采用，源码中夹杂特殊常量</li>
+<li>STLport版本，提供SGI STL为蓝本的高度可移植实现版本</li>
+<li>SGI STL版本，继承HP版本，开源，被GCC采用，可读性非常高。<br>VS2015的STL头文件在文件目录下的VC&gt;include里。</li>
+</ul>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/28/ModelDesign_1/" rel="next" title="设计模式(2)创建型">
+                <i class="fa fa-chevron-left"></i> 设计模式(2)创建型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/30/C++/" rel="prev" title="C++">
+                C++ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -397,8 +507,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -465,6 +584,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第1章-STL概论与版本简介"><span class="nav-number">1.</span> <span class="nav-text">第1章 STL概论与版本简介</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -614,6 +750,8 @@
 
   
 
+
+  
 
 
   
