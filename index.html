@@ -707,7 +707,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-02 18:20:15" itemprop="dateModified" datetime="2019-06-02T18:20:15+08:00">2019-06-02</time>
+                <time title="修改时间：2019-06-02 18:21:53" itemprop="dateModified" datetime="2019-06-02T18:21:53+08:00">2019-06-02</time>
               
             
           </span>
@@ -782,7 +782,7 @@
 <p>内存池取空间给free list, chunk_alloc<br>流程如下</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、 内存池有足够大小的空间，则分配申请的空间  result=start_free; start_free+=total_bytes;</span><br><span class="line"><span class="number">2</span>、 内存池没有足够大小的空间，但是至少还能分配一个节点的空间，则能分多少分多少</span><br><span class="line"><span class="number">3</span>、 内存池一个节点都腾不出来，向系统的heap申请<span class="number">2</span>倍于要求大小的空间，在此之间，如果内存池剩余有空间，则放到free-<span class="type">list</span>中去 </span><br><span class="line"><span class="number">4</span>、 如果向heap申请空间失败，那么只能看free-<span class="type">list</span>中更大的节点是否有可用空间了，有则用之，同时递归调用自身修正__nobjs </span><br><span class="line"><span class="number">5</span>、 如果free-<span class="type">list</span>也没有可用节点了，那么转向第一级空间配置器申请空间 </span><br><span class="line"><span class="number">6</span>、 第一级空间配置器可能释放一些内存或者抛出bad_alloc异常</span><br></pre></td></tr></table></figure>
 
-<p><img src="public/images/blog_book/STL_Chap2_8.jpg" alt="avatar"></p>
+<p><img src="/images/blog_book/STL_Chap2_8.jpg" alt="avatar"></p>
 
           
         
