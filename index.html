@@ -547,7 +547,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-31 19:31:53" itemprop="dateModified" datetime="2019-05-31T19:31:53+08:00">2019-05-31</time>
+                <time title="修改时间：2019-06-02 14:47:36" itemprop="dateModified" datetime="2019-06-02T14:47:36+08:00">2019-06-02</time>
               
             
           </span>
@@ -586,6 +586,9 @@
             <p>explicit:<br>在C++中，我们有时可以将构造函数用作自动类型转换函数。但这种自动特性并非总是合乎要求的，有时会导致意外的类型转换，因此，C++新增了关键字explicit，用于关闭这种自动特性。即被explicit关键字修饰的类构造函数，不能进行自动地隐式类型转换，只能显式地进行类型转换。<br>注意：只有一个参数的构造函数，或者构造函数有n个参数，但有n-1个参数提供了默认值，这样的情况才能进行类型转换。</p>
 <p>inline<br>引入inline函数的主要原因是用它替代C中复杂易错不易维护的宏函数，可消除所有与调用相关的痕迹以及性能的损失。inline通过消除调用开销来提升性能。<br>以下情况不宜使用内联：<br>(1) 如果函数体内的代码比较长，使用内联将导致内存消耗代价较高。<br>(2) 如果函数体内出现循环，那么执行函数体内代码的时间要比函数调用的开销大。<br>(3)  类的构造函数和析构函数容易让人误解成使用内联更有效。</p>
 <p>二维数组</p>
+<p>类型说明typedef：<br>typedef  类型 定义名;<br>类型说明只定义了一个数据类型的新名字而不是定义一种新的数据类型。定义名表示这个类型的新名字。只是个别名而已<br>类型解释Typename：<br>Typename关键字告诉了编译器把一个特殊的名字解释成一个类型，在下列情况下必须对一个name使用typename关键字：<br>1．一个唯一的name（可以作为类型理解），它嵌套在另一个类型中的。<br>2．依赖于一个模板参数，就是说：模板参数在某种程度上包含这个name。当模板参数使编译器在指认一个类型时产生了误解。</p>
+<p>在声明 template parameters（模板参数）时，class 和 typename 是可互换的。<br>用 typename 去标识 nested dependent type names（嵌套依赖类型名），在 base class lists（基类列表）中或在一个 member initialization list（成员初始化列表）中作为一个 base class identifier（基类标识符）时除外。</p>
+<p>typeid<br>decltype</p>
 
           
         
@@ -687,12 +690,24 @@
                 
               
 
-              <time title="创建时间：2019-05-30 14:11:47 / 修改时间：15:24:03" itemprop="dateCreated datePublished" datetime="2019-05-30T14:11:47+08:00">2019-05-30</time>
+              <time title="创建时间：2019-05-30 14:11:47" itemprop="dateCreated datePublished" datetime="2019-05-30T14:11:47+08:00">2019-05-30</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-02 16:21:13" itemprop="dateModified" datetime="2019-06-02T16:21:13+08:00">2019-06-02</time>
               
             
           </span>
@@ -737,6 +752,36 @@
 <li>STLport版本，提供SGI STL为蓝本的高度可移植实现版本</li>
 <li>SGI STL版本，继承HP版本，开源，被GCC采用，可读性非常高。<br>VS2015的STL头文件在文件目录下的VC&gt;include里。</li>
 </ul>
+<h2 id="第2章-空间配置器"><a href="#第2章-空间配置器" class="headerlink" title="第2章 空间配置器"></a>第2章 空间配置器</h2><p><strong>SGI标准的空间配置器，std::allocator</strong><br>只把C++的::operate new 和 ::operate delete 做一层薄薄的包装，效率不佳，不建议用<br>class allocator{…}<br>allocate-new<br>deallocate-delete</p>
+<p><strong>SGI特殊的空间配置器，std::alloc</strong></p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class <span class="type">Foo</span><span class="meta">&#123;...&#125;</span></span><br><span class="line"><span class="type">Foo</span>* pf = new <span class="type">Foo</span>;</span><br><span class="line">delete pf;</span><br></pre></td></tr></table></figure>
+
+<p>new含两步操作<br>1) 调用：：operator new配置内存<br>2) 调用Foo::Foo()构造对象内容<br>delete<br>1) 调用Foo::~Foo()将对象析构<br>2) 调用::operator delete 释放内存<br>如果只是进行空间分配操作，那么使用operator new就可以了，就好比C的malloc函数；如果已经分配好了空间，想在上面构造一个对象，那么可以使用placement new。</p>
+<p>STL allocator 将这两阶段操作区分开来。内存配置操作由 alloc::allocate() 负责，内存释放操作由 alloc::deallocate() 负责；对象构造操作由 ::construct() 负责，对象析构操作由 ::destroy() 负责。<br>内存空间的配置/释放与对象内容的构造/析构，分别着落在&lt;stl_alloc.h&gt;和&lt;stl_construct.h&gt;这两个文件身上。此外还有一个文件&lt;stl_uninitialized.h&gt;，这里定义了一些全局函数，用来填充(fill)或复制(copy)大块内存数据，它们也都隶属于STL标准规范。</p>
+<p>STL空间配置器主要分三个文件实现：<br>1) &lt;stl_construct.h&gt; ：这里定义了全局函数construct()和destroy()，负责对象的构造和析构。<br>2) &lt;stl_alloc.h&gt;：文件中定义了一、二两级配置器，彼此合作，配置器名为alloc。<br>3) &lt;stl_uninitialized.h&gt;：这里定义了一些全局函数，用来填充(fill)或复制(copy)大块内存数据，他们也都隶属于STL标准规范。<br>STL提供了五个全局函数用于处理空间:</p>
+<ol>
+<li>construct 用于构造 </li>
+<li>destroy 用于析构 </li>
+<li>uninitialized_copy(first, last, result) 将[first,last) 范围内的对象复制到result处</li>
+<li>uninitiated_fill(first, last, X) 将[first,last)范围内的内 存用对象X的副本填充 </li>
+<li>uninitiated_fill_n(first, n, X) 将first开始的n个连续的内存 空间用X的副本填充</li>
+</ol>
+<p>alloc主要在如下方面超越了allocator<br>1.通过内存池技术提升了分配效率:<br>2.对小内存频繁分配所可能造成的内存碎片问题的处理<br>3.对内存不足时的处理</p>
+<p><strong>两级空间配置器</strong><br>SGI STL在&lt;stl_alloc.h&gt;中定义了两级配置器。第一级空间配置器使用malloc/free函数；第二级空间配置器使用了内存池技术，当分配的空间大小小于128 bytes的时候，将使用第二级空间配置器，大于则调用第一级配置器。<br>第一级空间配置 __malloc_alloc_template:allocate(malloc)、deallocate(free)、reallocate(realloc)<br>第二级空间配置 __default_alloc_template:16个free_lists，分别管理8,16,24，…，120,128 bytes</p>
+<p>空间配置函数allocate</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">static void* allocate(size_t <span class="variable">__n</span>) </span><br><span class="line">&#123; </span><br><span class="line">	void* <span class="variable">__ret</span> = <span class="number">0</span>; <span class="comment">// 如果大于128 bytes，则使用第一级空间配置器 </span></span><br><span class="line">	<span class="keyword">if</span> (<span class="variable">__n</span> &gt; (size_t) <span class="variable">_MAX_BYTES</span>) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="variable">__ret</span> = malloc_alloc::allocate(<span class="variable">__n</span>); </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="comment">// 通过大小取得free-list数组下标，随后取得对应节点的指针 </span></span><br><span class="line">		<span class="comment">// 相当于&amp;_S_free_list[_S_freelist_index(__n)] </span></span><br><span class="line">		<span class="variable">_Obj</span>* <span class="variable">__STL_VOLATILE</span>* <span class="variable">__my_free_list</span> = <span class="variable">_S_free_list</span> + <span class="variable">_S_freelist_index</span>(<span class="variable">__n</span>); </span><br><span class="line">		<span class="variable">_Obj</span>* <span class="variable">__RESTRICT</span> <span class="variable">__result</span> = *<span class="variable">__my_free_list</span>; </span><br><span class="line">		<span class="comment">// 如果没有可用的节点，则通过_S_refill分配新的节点 </span></span><br><span class="line">		<span class="keyword">if</span> (<span class="variable">__result</span> == <span class="number">0</span>) </span><br><span class="line">			<span class="variable">__ret</span> = <span class="variable">_S_refill</span>(<span class="variable">_S_round_up</span>(<span class="variable">__n</span>)); </span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">		&#123; </span><br><span class="line">			<span class="comment">// 将当前节点移除，并当做结果返回给用户使用 </span></span><br><span class="line">			*<span class="variable">__my_free_list</span> = <span class="variable">__result</span> -&gt; <span class="variable">_M_free_list_link</span>; </span><br><span class="line">			<span class="variable">__ret</span> = <span class="variable">__result</span>; </span><br><span class="line">		&#125; </span><br><span class="line">	&#125; </span><br><span class="line">	return <span class="variable">__ret</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>大量分配小块的内存空间会带来问题：<br>一是从运行库的堆管理器中取得的内存（如通过malloc获得），会有一部分空间用于存储管理信息，用于管理各个内存块，导致内存的使用率降低<br>二是过多的小块内存会带来内存碎片问题；采用合适的内存池技术可以避免这些问题</p>
+<p>配置器除了负责配置，也负责回收。为了管理方便，SGI第二级配置器会主动将任何小额区块的内存需求量上调至8的倍数。并维护16个free-lists，各自管理大小分别为8，16，24，32，40，48，56，64，72，80，88，96，104， 112，120，128 字节的小额区块。当申请小于等于128字节时就会检查对应的free list，如果free-list中有可用的区块，就直接拿来，如果没有，就准备通过refill为对应的free-list 重新填充空间。<br>free-list的节点结构如下：</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">obj</span></span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="class"><span class="keyword">union</span> <span class="title">obj</span>* <span class="title">free_list_link</span>;</span></span><br><span class="line">    char client_data[<span class="number">1</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>空间释放函数deallocate<br>空间的回收，则是把内存重新加入到free-list对应的节点链表上去,deallocate</p>
+<p>重新填充refill<br>如果free-list中没有可用的区块，就通过refill为对应的free-list 重新填充空间。<br>默认操作是通过<em>S</em>chunk_alloc从内存池中取得20个新的节点添加到free-list链表中，而如果内存池中的内存不够用，这时候能分多少就分多少节点，返回的相应的节点数。再万一内存池一个节点都提供不了，就给内存池新增空间，如果失败，再抛出bad_alloc异常。</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">template &lt;bool <span class="variable">__threads</span>, int <span class="variable">__inst</span>&gt; </span><br><span class="line">void* <span class="variable">__default_alloc_template</span>&lt;<span class="variable">__threads</span>, <span class="variable">__inst</span>&gt;::<span class="variable">_S_refill</span>(size_t <span class="variable">__n</span>) </span><br><span class="line">&#123; </span><br><span class="line">	int <span class="variable">__nobjs</span> = <span class="number">20</span>; </span><br><span class="line">	<span class="comment">// 通过内存池分配内存，第二个参数为传引用方式 </span></span><br><span class="line">	char* <span class="variable">__chunk</span> = <span class="variable">_S_chunk_alloc</span>(<span class="variable">__n</span>, <span class="variable">__nobjs</span>); </span><br><span class="line">	<span class="variable">_Obj</span>* <span class="variable">__STL_VOLATILE</span>* <span class="variable">__my_free_list</span>; </span><br><span class="line">	<span class="variable">_Obj</span>* <span class="variable">__result</span>; </span><br><span class="line">	<span class="variable">_Obj</span>* <span class="variable">__current_obj</span>; </span><br><span class="line">	<span class="variable">_Obj</span>* <span class="variable">__next_obj</span>; int <span class="variable">__i</span>; </span><br><span class="line">	<span class="comment">// 如果只分配了一个节点，那么直接返回给用户就是了 </span></span><br><span class="line">	<span class="keyword">if</span> (<span class="number">1</span> == <span class="variable">__nobjs</span>) return(<span class="variable">__chunk</span>); </span><br><span class="line">	<span class="comment">// 如果分配了不止一个节点，那么多余的我们要放到free-list里面去 </span></span><br><span class="line">	<span class="variable">__my_free_list</span> = <span class="variable">_S_free_list</span> + <span class="variable">_S_freelist_index</span>(<span class="variable">__n</span>); </span><br><span class="line">	</span><br><span class="line">	<span class="comment">/* Build free list in chunk */</span> </span><br><span class="line">	<span class="variable">__result</span> = (<span class="variable">_Obj</span>*)<span class="variable">__chunk</span>; </span><br><span class="line">	*<span class="variable">__my_free_list</span> = <span class="variable">__next_obj</span> = (<span class="variable">_Obj</span>*)(<span class="variable">__chunk</span> + <span class="variable">__n</span>); </span><br><span class="line">	<span class="keyword">for</span> (<span class="variable">__i</span> = <span class="number">1</span>; ; <span class="variable">__i</span>++) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="variable">__current_obj</span> = <span class="variable">__next_obj</span>; </span><br><span class="line">		<span class="variable">__next_obj</span> = (<span class="variable">_Obj</span>*)((char*)<span class="variable">__next_obj</span> + <span class="variable">__n</span>); </span><br><span class="line">		<span class="keyword">if</span> (<span class="variable">__nobjs</span> - <span class="number">1</span> == <span class="variable">__i</span>) </span><br><span class="line">		&#123; </span><br><span class="line">			<span class="comment">// 最后一个节点的_M_free_list_link指针指向NULL，并跳出循环 </span></span><br><span class="line">			<span class="variable">__current_obj</span> -&gt; <span class="variable">_M_free_list_link</span> = <span class="number">0</span>; </span><br><span class="line">			break; </span><br><span class="line">		&#125; </span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">		&#123; </span><br><span class="line">			<span class="variable">__current_obj</span> -&gt; <span class="variable">_M_free_list_link</span> = <span class="variable">__next_obj</span>; </span><br><span class="line">		&#125; </span><br><span class="line">	&#125; </span><br><span class="line">	return(<span class="variable">__result</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>内存池取空间给free list, chunk_alloc<br>流程如下</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、 内存池有足够大小的空间，则分配申请的空间  result=start_free; start_free+=total_bytes;</span><br><span class="line"><span class="number">2</span>、 内存池没有足够大小的空间，但是至少还能分配一个节点的空间，则能分多少分多少</span><br><span class="line"><span class="number">3</span>、 内存池一个节点都腾不出来，向系统的heap申请<span class="number">2</span>倍于要求大小的空间，在此之间，如果内存池剩余有空间，则放到free-<span class="type">list</span>中去 </span><br><span class="line"><span class="number">4</span>、 如果向heap申请空间失败，那么只能看free-<span class="type">list</span>中更大的节点是否有可用空间了，有则用之，同时递归调用自身修正__nobjs </span><br><span class="line"><span class="number">5</span>、 如果free-<span class="type">list</span>也没有可用节点了，那么转向第一级空间配置器申请空间 </span><br><span class="line"><span class="number">6</span>、 第一级空间配置器可能释放一些内存或者抛出bad_alloc异常</span><br></pre></td></tr></table></figure>
+
 
           
         
