@@ -1771,7 +1771,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f57c26;
+  background: #ff8224;
 }
 .feed-link,
 .chat {
@@ -2783,14 +2783,6 @@ ul.breadcrumb li+li:last-child {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-@media screen and (min-width: 1200px) {
-  body {
-    background-image: url("/images/background.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 50% 50%;
-  }
-  #footer a {
-    color: #eee;
-  }
+body {
+  background: url("/images/backGround.jpg");
 }
