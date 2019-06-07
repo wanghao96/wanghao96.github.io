@@ -105,7 +105,7 @@
 <meta property="og:description" content="第1章 STL概论与版本简介STL六大组件:container，algorithm，iterator，functor，adapter，allocator  容器：各种数据结构，vector,list,deque,set,map等，用来存放数据，是一种class template 算法：常用算法如sort,search,copy,erase…，是一种function template 迭代器：扮演容">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/blog_book/STL_Chap2_8.jpg">
-<meta property="og:updated_time" content="2019-06-07T12:32:42.211Z">
+<meta property="og:updated_time" content="2019-06-07T15:24:08.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL源码剖析">
 <meta name="twitter:description" content="第1章 STL概论与版本简介STL六大组件:container，algorithm，iterator，functor，adapter，allocator  容器：各种数据结构，vector,list,deque,set,map等，用来存放数据，是一种class template 算法：常用算法如sort,search,copy,erase…，是一种function template 迭代器：扮演容">
@@ -415,7 +415,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-07 20:32:42" itemprop="dateModified" datetime="2019-06-07T20:32:42+08:00">2019-06-07</time>
+                <time title="修改时间：2019-06-07 23:24:08" itemprop="dateModified" datetime="2019-06-07T23:24:08+08:00">2019-06-07</time>
               
             
           </span>
@@ -682,12 +682,106 @@
 <p><strong>copy_backward</strong><br>copy_backward:以逆行的方向赋值区间内的每个元素到以result-1为起点的区间上。意思就是把区间复制到result的前面。<br>迭代器必须是双向迭代器。<br>如果输出区间尾部与输入区间的头部重合，可能会出现错误。因为输入区间的头部可能已经被覆盖。<br>其他的特性和copy类似。</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">template</span> &lt;class <span class="keyword">BidirectionalIterator1, </span>class <span class="keyword">BidirectionalIterator2&gt;</span></span><br><span class="line"><span class="keyword">inline </span><span class="keyword">BidirectionIterator2 </span>copy_backward(<span class="keyword">BidirectionalIterator1 </span>first, <span class="keyword">BidirectionalIterator1 </span>last, <span class="keyword">BidirectionalIterator2 </span>result)</span><br></pre></td></tr></table></figure>
 
-<h3 id="Set相关算法"><a href="#Set相关算法" class="headerlink" title="Set相关算法"></a>Set相关算法</h3><p><strong>set_union</strong></p>
-<p><strong>set_intersection</strong></p>
-<p><strong>set_difference</strong></p>
-<p><strong>set_symmetric_difference</strong></p>
+<h3 id="Set相关算法"><a href="#Set相关算法" class="headerlink" title="Set相关算法"></a>Set相关算法</h3><p><strong>set_union</strong><br>构造s1和s2的并集，此集合内含有s1和s2的所有元素<br>某个值在s1内出现n次，在s2内出现m次，那么该值在输出区间内出现max(n,m)次，其中n次来自s1,其余来自s2.<br>如果两个值相等就把s1的记录下来，两个迭代器前进，如果两个值不等，取较小的记录下来，其迭代器前进，再比较。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> InputIterator1, <span class="built_in">class</span> InputIterator2, <span class="built_in">class</span> OutputIterator&gt;</span><br><span class="line">OutputIterator set_union(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputItreator <span class="literal">result</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>set_intersection</strong><br>构造s1和s2的交集，此集合内含同时出现于s1和s2的每一个元素<br>如果某个值在s1出现n次，在s2出现m次，它在输出区间内出现min(n, m),并且全部来自s1。<br>在两个区间内分别移动迭代器，直到遇到有相同的，记录下来，然后再继续移动迭代器，直到遇到末尾。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> InputIterator1, <span class="built_in">class</span> InputIterator2, <span class="built_in">class</span> OutputIterator&gt;</span><br><span class="line">OutputIterator set_union(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputItreator <span class="literal">result</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>set_difference</strong><br>构造s1和s2的差集s1-s2，此集合包含出现于s1但不出现于s2的元素<br>如果某个值在s1出现n次，在s2出现m次，它在输出区间内出现max(n-m, 0),并且全部来自s1.<br>在两个区间内分别移动迭代器，如果s1的值小于s2的，记录下来s1的值，再两个迭代器前进；如果s1大于s2，s2的迭代器前进；如果相等，两个迭代器都前进，直到遇到末尾。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> InputIterator1, <span class="built_in">class</span> InputIterator2, <span class="built_in">class</span> OutputIterator&gt;</span><br><span class="line">OutputIterator set_union(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputItreator <span class="literal">result</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>set_symmetric_difference</strong><br>构造两个集合的对称差集，此集合内含有出现于s1但不出现于s2和出现于s2但不出现于s1的元素，即s1-s2与s2-s1的并集，即此元素在两个集合内是独一无二的，不能同时出现在两个集合内。<br>如果某个元素在s1内出现n次，在s2内出现m次，那么它在输出区间内出现|n-m|次，全部来自于出现次数较多的集合。<br>在连个区间内分别移动迭代器，如果元素相等，就两个迭代器前进；如果不等，记录下较小值，其迭代器前进。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> InputIterator1, <span class="built_in">class</span> InputIterator2, <span class="built_in">class</span> OutputIterator&gt;</span><br><span class="line">OutputIterator set_union(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputItreator <span class="literal">result</span>)</span><br></pre></td></tr></table></figure>
+
 <h3 id="heap算法"><a href="#heap算法" class="headerlink" title="heap算法"></a>heap算法</h3><p>已经介绍过了四种堆算法：make_heap(), pop_heap(), push_heap(), sort_heap().<br>算法所在的头文件&lt;stl_algo.h&gt;包含了&lt;stl_heap.h&gt;</p>
-<h3 id="其它算法"><a href="#其它算法" class="headerlink" title="其它算法"></a>其它算法</h3><p><strong>power</strong></p>
+<h3 id="其它算法"><a href="#其它算法" class="headerlink" title="其它算法"></a>其它算法</h3><p><strong>adjacent_find</strong><br>adjacent_find:找出第一组满足条件的相邻元素。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> ForwardIterator&gt;</span><br><span class="line">ForwardIterator adjacent_find(ForwardIterator <span class="keyword">first</span>, ForwardIterator <span class="keyword">last</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>count</strong><br>count:查找某个元素出现的数目</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> InputIterator, <span class="built_in">class</span> T&gt;</span><br><span class="line">typename iterator_traits&lt;InputIterator&gt;::difference_type <span class="built_in">count</span>(InputIterator <span class="keyword">first</span>, InputIterator <span class="keyword">last</span>, const T&amp; value)</span><br></pre></td></tr></table></figure>
+
+<p><strong>count_if</strong><br>count_if:返回仿函数计算结果为true的元素的个数</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">template</span> &lt;class <span class="type">InputIterator</span>, class <span class="type">Predicate</span>&gt;</span><br><span class="line">typename iterator_traits&lt;<span class="type">InputIterator</span>&gt;::difference_type count_if(<span class="type">InputIterator</span> first, <span class="type">InputIterator</span> last, <span class="type">Predicate</span> pred)</span><br></pre></td></tr></table></figure>
+
+<p><strong>find</strong><br>find:查找第一个匹配的元素</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> InputIterator, <span class="built_in">class</span> T&gt;</span><br><span class="line">InputIterator find(InputIterator <span class="keyword">first</span>, InputIterator <span class="keyword">last</span>, const T&amp; value)</span><br></pre></td></tr></table></figure>
+
+<p><strong>find_if</strong><br>find_if:查找第一个使仿函数为true的元素</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> InputIterator, <span class="built_in">class</span> Predicate&gt;</span><br><span class="line">InputIterator find_if(InputIterator <span class="keyword">first</span>, InputIterator <span class="keyword">last</span>, Predicate pred)</span><br></pre></td></tr></table></figure>
+
+<p><strong>find_end</strong><br>find_end:在序列一的区间内查找序列二的最后一次出现点。要求完全匹配的序列，即连续出现的序列2.可以利用正向查找，每次向后查找，记录上次找的的位置，最后没有找到了，那么上次找到的位置就是最后一次。也可以利用逆向迭代器从后向前找到第一次出现的位置。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> ForwardIterator1, <span class="built_in">class</span> ForwardIterator2&gt;</span><br><span class="line">inline ForwardIterator1 find_end(ForwardIterator1 <span class="keyword">first</span>, ForwardIterator1 <span class="keyword">last</span>, ForwardIterator2 first2, ForwardIterator2 last2)</span><br></pre></td></tr></table></figure>
+
+<p><strong>find_first of</strong><br>find_first of:找到序列2中的任何一个元素在序列一中出现的位置。不需要完全配匹配序列2，任何一个元素出现都可以。</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="keyword">class</span> InputIterator, <span class="keyword">class</span> ForwardIterator&gt;</span><br><span class="line">InputIterator find<span class="number">_f</span>irst<span class="number">_</span><span class="keyword">of</span>(InputIterator first<span class="number">1</span>, InputIterator last<span class="number">1</span>, ForwardIterator first<span class="number">2</span>, ForwardIterator last<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>for_each</strong><br>for_each:将仿函数施加于区间内的每个元素之上。不能够改变元素内容,返回值被忽略。,可以用于打印元素的值等</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="keyword">class</span> InputIterator, <span class="keyword">class</span> <span class="function"><span class="keyword">Function</span></span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">Function</span></span> for_each(InputIterator first, InputIterator last, <span class="function"><span class="keyword">Function</span></span> f)</span><br></pre></td></tr></table></figure>
+
+<p><strong>generate</strong><br>generate:将仿函数的运算结果赋值给区间内的每一个元素</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="keyword">class</span> ForwardIterator, <span class="keyword">class</span> Generator&gt;</span><br><span class="line"><span class="keyword">void</span> <span class="keyword">generate</span>(ForwardIterator first, ForwardIterator last, Generator gen)</span><br></pre></td></tr></table></figure>
+
+<p><strong>generate_n</strong><br>generate_n:将仿函数的运算结果赋值给迭代器first开始的n个元素上</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="keyword">class</span> OutputIterator, <span class="keyword">class</span> Size, <span class="keyword">class</span> Generator&gt;</span><br><span class="line"><span class="keyword">void</span> <span class="keyword">generate</span>(OutputIterator first, Size n, Generator gen)</span><br></pre></td></tr></table></figure>
+
+<p><strong>includes</strong><br>includes:<br>判断序列2是否包含于序列1<br>不要求序列1中连续，只要都出现了序列2的元素就行。<br>两个区间都是有序的<br>相等：s1元素不小于s2且s2元素不小于s1, 或者s1元素不大于s2且s2元素不大于s1，即为相等。</p>
+<figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> InputIterator1, <span class="keyword">class</span> InputIterator2&gt;</span><br><span class="line"><span class="built_in">bool</span> includes(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator last2)</span><br></pre></td></tr></table></figure>
+
+<p><strong>max_element</strong><br>max_element:返回区间内最大的元素</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> ForwardIterator&gt;</span><br><span class="line">ForwardIterator max_element(ForwardIterator <span class="keyword">first</span>, ForwardIterator <span class="keyword">last</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>merge</strong><br>merge:将两个序列融合成一个序列,三个序列都是有序的,返回指向结果序列的尾后元素</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> InputIterator1, <span class="built_in">class</span> InputIterator2, <span class="built_in">class</span> OutputIterator&gt;</span><br><span class="line">OutputIterator merge(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator <span class="literal">result</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>min_element</strong><br>min_element:返回序列中数值最小的元素</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> ForwardIterator&gt;</span><br><span class="line">ForwardIterator min_element(ForwardIterator <span class="keyword">first</span>, ForwardIterator <span class="keyword">last</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>partition</strong><br>partition:<br>对区间进行重新排列，所有被仿函数判定为true的元素被放倒区间的前端，被判定为false的元素被放到区间的后端。<br>这个算法并不保留元素的原始相对位置。需要保留原始相对位置，应使用stable_partition.<br>算法实现类似于快排，先从前向后找到一个false,再从后向前找到一个true，然后交换。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> BidirectionIterator, <span class="built_in">class</span> Predicate&gt;</span><br><span class="line">BidirectionIterator partition(BidirectionIterator <span class="keyword">first</span>, BidirectionIterator <span class="keyword">last</span>, Predicate pred)</span><br></pre></td></tr></table></figure>
+
+<p><strong>remove</strong><br>remove:移除区间内与value相等的元素<br>并不是真正移除，容器大小并未改变。只是将不相等的元素重新赋值到原区间上，所以会在原来区间有多余的元素<br>返回在重新整理后的元素的下一位置<br>erase()可以用来删除多余的元素</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> ForwardIterator, <span class="built_in">class</span> T&gt;</span><br><span class="line">ForwardIterator remove(ForwardIterator <span class="keyword">first</span>, ForwardIterator <span class="keyword">last</span>, const T&amp; value)</span><br></pre></td></tr></table></figure>
+
+<p><strong>remove_copy</strong><br>remove_copy:与remove类似，只不过复制到其他容器上,新容器可以与原容器重叠</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> ForwardIterator, <span class="built_in">class</span> OutputIterator, <span class="built_in">class</span> T&gt;</span><br><span class="line">ForwardIterator remove_copy(ForwardIterator <span class="keyword">first</span>, ForwardIterator <span class="keyword">last</span>, OutputIterator <span class="literal">result</span>, const T&amp; value)</span><br></pre></td></tr></table></figure>
+
+<p><strong>remove_if</strong><br>remove_if:移除区间内被仿函数判定为true的元素,原理与remove类似</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> ForwardIterator, <span class="built_in">class</span> Predicate&gt;</span><br><span class="line">ForwardIterator remove_if(ForwardIterator <span class="keyword">first</span>, ForwardIterator <span class="keyword">last</span>, Predicate pred)</span><br></pre></td></tr></table></figure>
+
+<p><strong>remove_copy_if</strong><br>remove_copy_if:remove_copy与remove_if的结合</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> ForwardIterator, <span class="built_in">class</span> OutputIterator, <span class="built_in">class</span> Predicate&gt;</span><br><span class="line">ForwardIterator remove_copy_if(ForwardIterator <span class="keyword">first</span>, ForwardIterator <span class="keyword">last</span>, OutputIterator <span class="literal">result</span>, Predicate pred)</span><br></pre></td></tr></table></figure>
+
+<p><strong>replace</strong><br>replace:将区间内的所有元素用新元素取代</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="keyword">class</span> ForwardIterator, <span class="keyword">class</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> replace(ForwardIterator first, ForwardIterator last, const T&amp; old<span class="number">_</span><span class="keyword">value</span>, const T&amp; <span class="keyword">new</span><span class="number">_</span><span class="keyword">value</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>replace_copy</strong><br>replace_copy:与replace类似，只不过复制到result所指容器上,新容器可以与原容器重叠</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="keyword">class</span> ForwardIterator, <span class="keyword">class</span> OutputIterator, <span class="keyword">class</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> replace<span class="number">_</span>copy(ForwardIterator first, ForwardIterator last, OutputIterator result, const T&amp; old<span class="number">_</span><span class="keyword">value</span>, const T&amp; <span class="keyword">new</span><span class="number">_</span><span class="keyword">value</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>replace_if</strong><br>replace_if:移除区间内被仿函数判定为true的元素,原理与replace类似</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="keyword">class</span> ForwardIterator, <span class="keyword">class</span> Predicate, <span class="keyword">class</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> replace<span class="number">_</span><span class="keyword">if</span>(ForwardIterator first, ForwardIterator last, Predicate pred, const T&amp; <span class="keyword">new</span><span class="number">_</span><span class="keyword">value</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>replace_copy_if</strong><br>replace_copy_if:replace_if和replace_copy的结合</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="keyword">class</span> <span class="keyword">Iterator</span>, <span class="keyword">class</span> OutputIterator, <span class="keyword">class</span> T&gt;</span><br><span class="line">void replace_copy(<span class="keyword">Iterator</span> first, <span class="keyword">Iterator</span> last, OutputIterator <span class="keyword">result</span>, Predicate pred, <span class="keyword">const</span> T&amp; new_value)</span><br></pre></td></tr></table></figure>
+
+<p><strong>reverse</strong><br>reverse:将序列的元素在原容器中颠倒重排。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> BidirectionIterator&gt;</span><br><span class="line">inline void <span class="built_in">reverse</span>(BidirectionIterator <span class="keyword">first</span>, BidirectionIterator <span class="keyword">last</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>reverse_copy</strong><br>reverse_copy:将序列颠倒重排，将结果置于另一序列</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> BidirectionIterator, <span class="built_in">class</span> OutputIterator&gt;</span><br><span class="line">inline void <span class="built_in">reverse</span>(BidirectionIterator <span class="keyword">first</span>, BidirectionIterator <span class="keyword">last</span>, OutputIterator <span class="literal">result</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>rotate</strong><br>rotate:以middle为中心将序列旋转，middle所指的元素将会变成第一个元素。rotate()可以交换两个长度不同的区间，swap_range()只能交换长度相同的</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="built_in">class</span> ForwardIterator&gt;</span><br><span class="line">inline void rotate(ForwardIterator <span class="keyword">first</span>, ForwardIterator <span class="keyword">middle</span>, ForwardIterator <span class="keyword">last</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>adjacent_find</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>adjacent_find</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>adjacent_find</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <hr>
 <h2 id="第7章"><a href="#第7章" class="headerlink" title="第7章"></a>第7章</h2><hr>
 <h2 id="第8章"><a href="#第8章" class="headerlink" title="第8章"></a>第8章</h2><hr>
