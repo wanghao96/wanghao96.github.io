@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="1.抽象工厂模式Abstract Factory2.建造者模式Buider3.工厂方法模式Factory Method4.单例模式Singleton5.原型模式Prototype">
-<meta name="keywords" content="设计模式">
+  <meta name="description" content="第1章 关于对象C语言中，数据和函数分开声明，没有支持二者之间的关联性，是程序性的C++: ADT/class hierarchy 数据封装C++在布局以及存取时间上主要的额外负担是由virtual引起 第2章 构造函数语意学第3章 Data语意学第4章 Function语意学第5章 构造、解构、拷贝语意学第6章 执行期语意学第7章 站在对象模型的类端">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式(2)创建型">
-<meta property="og:url" content="http://yoursite.com/2019/05/28/ModelDesign_1/index.html">
+<meta property="og:title" content="深入探索C++对象模型">
+<meta property="og:url" content="http://yoursite.com/2019/06/09/ReadingNotes/深入探索C-对象模型/index.html">
 <meta property="og:site_name" content="WangHao_Blog">
-<meta property="og:description" content="1.抽象工厂模式Abstract Factory2.建造者模式Buider3.工厂方法模式Factory Method4.单例模式Singleton5.原型模式Prototype">
+<meta property="og:description" content="第1章 关于对象C语言中，数据和函数分开声明，没有支持二者之间的关联性，是程序性的C++: ADT/class hierarchy 数据封装C++在布局以及存取时间上主要的额外负担是由virtual引起 第2章 构造函数语意学第3章 Data语意学第4章 Function语意学第5章 构造、解构、拷贝语意学第6章 执行期语意学第7章 站在对象模型的类端">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-28T13:17:21.797Z">
+<meta property="og:updated_time" content="2019-06-09T06:15:25.137Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式(2)创建型">
-<meta name="twitter:description" content="1.抽象工厂模式Abstract Factory2.建造者模式Buider3.工厂方法模式Factory Method4.单例模式Singleton5.原型模式Prototype">
+<meta name="twitter:title" content="深入探索C++对象模型">
+<meta name="twitter:description" content="第1章 关于对象C语言中，数据和函数分开声明，没有支持二者之间的关联性，是程序性的C++: ADT/class hierarchy 数据封装C++在布局以及存取时间上主要的额外负担是由virtual引起 第2章 构造函数语意学第3章 Data语意学第4章 Function语意学第5章 构造、解构、拷贝语意学第6章 执行期语意学第7章 站在对象模型的类端">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/28/ModelDesign_1/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/09/ReadingNotes/深入探索C-对象模型/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>设计模式(2)创建型 | WangHao_Blog</title>
+  <title>深入探索C++对象模型 | WangHao_Blog</title>
   
 
 
@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/ModelDesign_1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/09/ReadingNotes/深入探索C-对象模型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang Hao">
@@ -370,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式(2)创建型
+          <h1 class="post-title" itemprop="name headline">深入探索C++对象模型
 
               
             
@@ -396,7 +396,7 @@
                 
               
 
-              <time title="创建时间：2019-05-28 21:15:10 / 修改时间：21:17:21" itemprop="dateCreated datePublished" datetime="2019-05-28T21:15:10+08:00">2019-05-28</time>
+              <time title="创建时间：2019-06-09 12:37:45 / 修改时间：14:15:25" itemprop="dateCreated datePublished" datetime="2019-06-09T12:37:45+08:00">2019-06-09</time>
             
 
             
@@ -435,7 +435,8 @@
       
 
       
-        <h2 id="1-抽象工厂模式Abstract-Factory"><a href="#1-抽象工厂模式Abstract-Factory" class="headerlink" title="1.抽象工厂模式Abstract Factory"></a>1.抽象工厂模式Abstract Factory</h2><h2 id="2-建造者模式Buider"><a href="#2-建造者模式Buider" class="headerlink" title="2.建造者模式Buider"></a>2.建造者模式Buider</h2><h2 id="3-工厂方法模式Factory-Method"><a href="#3-工厂方法模式Factory-Method" class="headerlink" title="3.工厂方法模式Factory Method"></a>3.工厂方法模式Factory Method</h2><h2 id="4-单例模式Singleton"><a href="#4-单例模式Singleton" class="headerlink" title="4.单例模式Singleton"></a>4.单例模式Singleton</h2><h2 id="5-原型模式Prototype"><a href="#5-原型模式Prototype" class="headerlink" title="5.原型模式Prototype"></a>5.原型模式Prototype</h2>
+        <h2 id="第1章-关于对象"><a href="#第1章-关于对象" class="headerlink" title="第1章 关于对象"></a>第1章 关于对象</h2><p>C语言中，数据和函数分开声明，没有支持二者之间的关联性，是程序性的<br>C++: ADT/class hierarchy 数据封装<br>C++在布局以及存取时间上主要的额外负担是由virtual引起</p>
+<h2 id="第2章-构造函数语意学"><a href="#第2章-构造函数语意学" class="headerlink" title="第2章 构造函数语意学"></a>第2章 构造函数语意学</h2><h2 id="第3章-Data语意学"><a href="#第3章-Data语意学" class="headerlink" title="第3章 Data语意学"></a>第3章 Data语意学</h2><h2 id="第4章-Function语意学"><a href="#第4章-Function语意学" class="headerlink" title="第4章 Function语意学"></a>第4章 Function语意学</h2><h2 id="第5章-构造、解构、拷贝语意学"><a href="#第5章-构造、解构、拷贝语意学" class="headerlink" title="第5章 构造、解构、拷贝语意学"></a>第5章 构造、解构、拷贝语意学</h2><h2 id="第6章-执行期语意学"><a href="#第6章-执行期语意学" class="headerlink" title="第6章 执行期语意学"></a>第6章 执行期语意学</h2><h2 id="第7章-站在对象模型的类端"><a href="#第7章-站在对象模型的类端" class="headerlink" title="第7章 站在对象模型的类端"></a>第7章 站在对象模型的类端</h2>
       
     </div>
 
@@ -458,7 +459,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
           
         </div>
       
@@ -471,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/27/ModelDesign/" rel="next" title="设计模式(1)简介和分类">
-                <i class="fa fa-chevron-left"></i> 设计模式(1)简介和分类
+              <a href="/2019/06/08/NextBlog/makedown-2/" rel="next" title="makedown_2">
+                <i class="fa fa-chevron-left"></i> makedown_2
               </a>
             
           </div>
@@ -481,8 +482,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/30/读书笔记/STL源码剖析/" rel="prev" title="STL源码剖析">
-                STL源码剖析 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/10/Algorithm/链表/" rel="prev" title="链表">
+                链表 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -554,7 +555,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -583,7 +584,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -621,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-抽象工厂模式Abstract-Factory"><span class="nav-text">1.抽象工厂模式Abstract Factory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-建造者模式Buider"><span class="nav-text">2.建造者模式Buider</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-工厂方法模式Factory-Method"><span class="nav-text">3.工厂方法模式Factory Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-单例模式Singleton"><span class="nav-text">4.单例模式Singleton</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-原型模式Prototype"><span class="nav-text">5.原型模式Prototype</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第1章-关于对象"><span class="nav-text">第1章 关于对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第2章-构造函数语意学"><span class="nav-text">第2章 构造函数语意学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3章-Data语意学"><span class="nav-text">第3章 Data语意学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第4章-Function语意学"><span class="nav-text">第4章 Function语意学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5章-构造、解构、拷贝语意学"><span class="nav-text">第5章 构造、解构、拷贝语意学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第6章-执行期语意学"><span class="nav-text">第6章 执行期语意学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第7章-站在对象模型的类端"><span class="nav-text">第7章 站在对象模型的类端</span></a></li></ol></div>
             
 
           </div>
