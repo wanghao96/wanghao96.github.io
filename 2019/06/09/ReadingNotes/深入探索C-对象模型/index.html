@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://yoursite.com/images/blog_book/C++ObjectModel/1.1.png">
 <meta property="og:image" content="http://yoursite.com/images/blog_book/C++ObjectModel/1.2.png">
 <meta property="og:image" content="http://yoursite.com/images/blog_book/C++ObjectModel/1.3.png">
-<meta property="og:updated_time" content="2019-06-12T15:52:35.546Z">
+<meta property="og:updated_time" content="2019-06-13T04:32:45.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入探索C++对象模型">
 <meta name="twitter:description" content="第1章 关于对象C语言中，数据和函数分开声明，没有支持二者之间的关联性，是程序性的C++: ADT/class hierarchy 数据封装C++在布局以及存取时间上主要的额外负担是由virtual引起，包括：  virtual function 机制，用来支持”执行期绑定”(runtime binding)。 virtual base class ——虚基类机制，以实现”多次出现在继承体系中的b">
@@ -417,7 +417,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-12 23:52:35" itemprop="dateModified" datetime="2019-06-12T23:52:35+08:00">2019-06-12</time>
+                <time title="修改时间：2019-06-13 12:32:45" itemprop="dateModified" datetime="2019-06-13T12:32:45+08:00">2019-06-13</time>
               
             
           </span>
@@ -536,9 +536,12 @@
 <li>当class内含一个member object而后者的class声明有一个copy constructor时。(不论是被class设计者明确声明，或是被编译器合成)</li>
 <li>当class继承自一个base class而后者存在一个copy constructor时(再次强调，不论是被显式声明或是被合成而得)</li>
 <li>当class声明了一个或多个virtual function时</li>
-<li>当class派生自一个继承串链，其中有一个或多个virtual base classes时<br>前两种情况中，编译器必须将member或base class的”copy constructors调用操作”安插到被合成的copy constructor中<h4 id="重新设定Virtual-Table的指针"><a href="#重新设定Virtual-Table的指针" class="headerlink" title="重新设定Virtual Table的指针"></a>重新设定Virtual Table的指针</h4>对于有虚函数的类，如果两个对象的类型相同那么位逐次拷贝其实是可以胜任的。但问题将出现在，如果基类由其继承类进行初始化时，此时若按照位逐次拷贝来完成这个工作，那么基类的vptr将指向其继承类的虚函数表，这将导致无法预料的后果——调用一个错误的虚函数实体是无法避免的，轻则带来程序崩溃，更糟糕的问题可能是这个错误被隐藏了。所以对于有虚函数的类编译器将会明确的使被初始化的对象的vptr指向正确的虚函数表。因此有虚函数的类没有声明拷贝构造函数，编译将为之合成一个，来完成上述工作，以及初始化各数据成员，声明有拷贝构造函数的话也会被插入完成上述工作的代码。<h4 id="处理virtual-base-class-subobject"><a href="#处理virtual-base-class-subobject" class="headerlink" title="处理virtual base class subobject"></a>处理virtual base class subobject</h4>virtual base class的存在需要特别处理。一个class object如果以另一个object作为初值，而后者有一个virtual base class subobject，那么也会使“bitwise copy semantics”失效<br>对于继承串链中有虚基类的情况，问题同样出现在继承类向基类提供初值的情况，此时位逐次拷贝有可能破坏对象中虚基类子对象的位置。<h3 id="2-3-程序转换语意学"><a href="#2-3-程序转换语意学" class="headerlink" title="2.3 程序转换语意学"></a>2.3 程序转换语意学</h3><h3 id="2-4-成员们的初始化队伍"><a href="#2-4-成员们的初始化队伍" class="headerlink" title="2.4 成员们的初始化队伍"></a>2.4 成员们的初始化队伍</h3></li>
+<li>当class派生自一个继承串链，其中有一个或多个virtual base classes时</li>
 </ul>
-<hr>
+<p>前两种情况中，编译器必须将member或base class的”copy constructors调用操作”安插到被合成的copy constructor中</p>
+<h4 id="重新设定Virtual-Table的指针"><a href="#重新设定Virtual-Table的指针" class="headerlink" title="重新设定Virtual Table的指针"></a>重新设定Virtual Table的指针</h4><p>对于有虚函数的类，如果两个对象的类型相同那么位逐次拷贝其实是可以胜任的。但问题将出现在，如果基类由其继承类进行初始化时，此时若按照位逐次拷贝来完成这个工作，那么基类的vptr将指向其继承类的虚函数表，这将导致无法预料的后果——调用一个错误的虚函数实体是无法避免的，轻则带来程序崩溃，更糟糕的问题可能是这个错误被隐藏了。所以对于有虚函数的类编译器将会明确的使被初始化的对象的vptr指向正确的虚函数表。因此有虚函数的类没有声明拷贝构造函数，编译将为之合成一个，来完成上述工作，以及初始化各数据成员，声明有拷贝构造函数的话也会被插入完成上述工作的代码。</p>
+<h4 id="处理virtual-base-class-subobject"><a href="#处理virtual-base-class-subobject" class="headerlink" title="处理virtual base class subobject"></a>处理virtual base class subobject</h4><p>virtual base class的存在需要特别处理。一个class object如果以另一个object作为初值，而后者有一个virtual base class subobject，那么也会使“bitwise copy semantics”失效<br>对于继承串链中有虚基类的情况，问题同样出现在继承类向基类提供初值的情况，此时位逐次拷贝有可能破坏对象中虚基类子对象的位置。</p>
+<h3 id="2-3-程序转换语意学"><a href="#2-3-程序转换语意学" class="headerlink" title="2.3 程序转换语意学"></a>2.3 程序转换语意学</h3><h3 id="2-4-成员们的初始化队伍"><a href="#2-4-成员们的初始化队伍" class="headerlink" title="2.4 成员们的初始化队伍"></a>2.4 成员们的初始化队伍</h3><hr>
 <h2 id="第3章-Data语意学"><a href="#第3章-Data语意学" class="headerlink" title="第3章 Data语意学"></a>第3章 Data语意学</h2><h2 id="第4章-Function语意学"><a href="#第4章-Function语意学" class="headerlink" title="第4章 Function语意学"></a>第4章 Function语意学</h2><h2 id="第5章-构造、解构、拷贝语意学"><a href="#第5章-构造、解构、拷贝语意学" class="headerlink" title="第5章 构造、解构、拷贝语意学"></a>第5章 构造、解构、拷贝语意学</h2><h2 id="第6章-执行期语意学"><a href="#第6章-执行期语意学" class="headerlink" title="第6章 执行期语意学"></a>第6章 执行期语意学</h2><hr>
 <h2 id="第7章-站在对象模型的类端"><a href="#第7章-站在对象模型的类端" class="headerlink" title="第7章 站在对象模型的类端"></a>第7章 站在对象模型的类端</h2>
       
