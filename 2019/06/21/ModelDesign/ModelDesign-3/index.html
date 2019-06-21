@@ -96,13 +96,20 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="WangHao_Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/05/index.html">
+  <meta name="description" content="模板方法Template Method解决问题：多个子类有相同的方法，并且逻辑相同，细节有差异。实现：在抽象类实现通用接口，将核心算法设计为模板方法，细节变化在子类实现，使用虚函数缺点：每一个不同的实现都需要一个子类来实现，导致类的个数增加，使得系统更加庞大。 123456789101112131415161718192021222324252627282930313233343536373839">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式(4)行为型">
+<meta property="og:url" content="http://yoursite.com/2019/06/21/ModelDesign/ModelDesign-3/index.html">
 <meta property="og:site_name" content="WangHao_Blog">
+<meta property="og:description" content="模板方法Template Method解决问题：多个子类有相同的方法，并且逻辑相同，细节有差异。实现：在抽象类实现通用接口，将核心算法设计为模板方法，细节变化在子类实现，使用虚函数缺点：每一个不同的实现都需要一个子类来实现，导致类的个数增加，使得系统更加庞大。 123456789101112131415161718192021222324252627282930313233343536373839">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/blog_book/ModelDesign/TemplateMethod_1.png">
+<meta property="og:updated_time" content="2019-06-21T06:41:56.252Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WangHao_Blog">
+<meta name="twitter:title" content="设计模式(4)行为型">
+<meta name="twitter:description" content="模板方法Template Method解决问题：多个子类有相同的方法，并且逻辑相同，细节有差异。实现：在抽象类实现通用接口，将核心算法设计为模板方法，细节变化在子类实现，使用虚函数缺点：每一个不同的实现都需要一个子类来实现，导致类的个数增加，使得系统更加庞大。 123456789101112131415161718192021222324252627282930313233343536373839">
+<meta name="twitter:image" content="http://yoursite.com/images/blog_book/ModelDesign/TemplateMethod_1.png">
 
 
 
@@ -110,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/archives/2019/05/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/21/ModelDesign/ModelDesign-3/">
 
 
 
@@ -120,7 +127,7 @@
   };
 </script>
 
-  <title>归档 | WangHao_Blog</title>
+  <title>设计模式(4)行为型 | WangHao_Blog</title>
   
 
 
@@ -168,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,7 +264,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -328,311 +335,183 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/ModelDesign/ModelDesign-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Hao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WangHao_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">设计模式(4)行为型
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-21 13:31:38 / 修改时间：14:41:56" itemprop="dateCreated datePublished" datetime="2019-06-21T13:31:38+08:00">2019-06-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
-      
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/30/ProgramingLanguage/C#/" itemprop="url">
             
-              <span itemprop="name">C#基础语法</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-30T15:24:39+08:00" content="2019-05-30">
-          05-30
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/30/ProgramingLanguage/C++/" itemprop="url">
-            
-              <span itemprop="name">C++基础语法</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-30T15:00:58+08:00" content="2019-05-30">
-          05-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h2 id="模板方法Template-Method"><a href="#模板方法Template-Method" class="headerlink" title="模板方法Template Method"></a>模板方法Template Method</h2><p>解决问题：多个子类有相同的方法，并且逻辑相同，细节有差异。<br>实现：在抽象类实现通用接口，将核心算法设计为模板方法，细节变化在子类实现，使用虚函数<br>缺点：每一个不同的实现都需要一个子类来实现，导致类的个数增加，使得系统更加庞大。<br><img src="/images/blog_book/ModelDesign/TemplateMethod_1.png" alt="avatar"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"pch.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">//传统的车牌识别算法分为以下四个步骤：预处理、车牌定位、车牌分割、字符识别。</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AbstractPlateAlg</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">AlgMethod</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		PreProcesser();</span><br><span class="line">		PlateLocation();</span><br><span class="line">		PlateSegmation();</span><br><span class="line">		PlateRecognition();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">virtual</span> ~AbstractPlateAlg()&#123;&#125;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	<span class="comment">//预处理 </span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PreProcesser</span><span class="params">()</span> </span>= <span class="number">0</span>; </span><br><span class="line">	<span class="comment">//车牌定位 </span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PlateLocation</span><span class="params">()</span> </span>= <span class="number">0</span>; </span><br><span class="line">	<span class="comment">//车牌定位 </span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PlateSegmation</span><span class="params">()</span> </span>= <span class="number">0</span>; </span><br><span class="line">	<span class="comment">//车牌定位 </span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PlateRecognition</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//具体类,实现算法A </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreateAlgA</span> :</span><span class="keyword">public</span> AbstractPlateAlg</span><br><span class="line">&#123; </span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PreProcesser</span><span class="params">()</span> override</span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"算法A，车牌预处理"</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PlateLocation</span><span class="params">()</span> override</span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"算法A，车牌定位"</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PlateSegmation</span><span class="params">()</span> override</span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"算法A，车牌分割"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;  </span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PlateRecognition</span><span class="params">()</span> override</span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"算法A，字符识别"</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;; </span><br><span class="line"><span class="comment">//具体类,实现算法B </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreateAlgB</span> :</span><span class="keyword">public</span> AbstractPlateAlg </span><br><span class="line">&#123; </span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PreProcesser</span><span class="params">()</span> override</span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"算法B，车牌预处理"</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PlateLocation</span><span class="params">()</span> override</span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"算法B，车牌定位"</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PlateSegmation</span><span class="params">()</span> override</span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"算法B，车牌分割"</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PlateRecognition</span><span class="params">()</span> override</span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"算法B，字符识别"</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">	AbstractPlateAlg *pAlgA = <span class="keyword">new</span> ConcreateAlgA(); </span><br><span class="line">	<span class="keyword">if</span> (pAlgA != <span class="literal">nullptr</span>) </span><br><span class="line">	&#123; </span><br><span class="line">		pAlgA-&gt;AlgMethod(); </span><br><span class="line">		<span class="keyword">delete</span> pAlgA; </span><br><span class="line">		pAlgA = <span class="literal">nullptr</span>;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"******************************************"</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">	AbstractPlateAlg *pAlgB = <span class="keyword">new</span> ConcreateAlgB(); </span><br><span class="line">	<span class="keyword">if</span> (pAlgB != <span class="literal">nullptr</span>) </span><br><span class="line">	&#123; </span><br><span class="line">		pAlgB-&gt;AlgMethod(); </span><br><span class="line">		<span class="keyword">delete</span> pAlgB; </span><br><span class="line">		pAlgB = <span class="literal">nullptr</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/30/ReadingNotes/STL源码剖析/" itemprop="url">
-            
-              <span itemprop="name">STL源码剖析</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-30T14:11:47+08:00" content="2019-05-30">
-          05-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<p>输出：<br>算法A，车牌预处理<br>算法A，车牌定位<br>算法A，车牌分割<br>算法A，字符识别</p>
+<hr>
+<p>算法B，车牌预处理<br>算法B，车牌定位<br>算法B，车牌分割<br>算法B，字符识别</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/28/ModelDesign/ModelDesign_1/" itemprop="url">
-            
-              <span itemprop="name">设计模式(2)创建型</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-28T21:15:10+08:00" content="2019-05-28">
-          05-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/27/ModelDesign/ModelDesign/" itemprop="url">
-            
-              <span itemprop="name">设计模式(1)简介和分类</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-27T09:28:10+08:00" content="2019-05-27">
-          05-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/26/NextBlog/MakeDown/" itemprop="url">
-            
-              <span itemprop="name">MakeDown</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-26T19:15:52+08:00" content="2019-05-26">
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/26/hello-world/" itemprop="url">
-            
-              <span itemprop="name">Hello World</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-26T15:34:29+08:00" content="2019-05-26">
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/21/ModelDesign/ModelDesign-2/" rel="next" title="设计模式(3)结构型">
+                <i class="fa fa-chevron-left"></i> 设计模式(3)结构型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -652,8 +531,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -730,6 +618,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模板方法Template-Method"><span class="nav-text">模板方法Template Method</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -881,6 +786,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -896,6 +805,8 @@
 
   
 
+
+  
 
 
   
