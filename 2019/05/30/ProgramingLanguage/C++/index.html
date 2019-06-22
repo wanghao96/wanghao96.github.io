@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="WangHao_Blog">
 <meta property="og:description" content="explicit:在C++中，我们有时可以将构造函数用作自动类型转换函数。但这种自动特性并非总是合乎要求的，有时会导致意外的类型转换，因此，C++新增了关键字explicit，用于关闭这种自动特性。即被explicit关键字修饰的类构造函数，不能进行自动地隐式类型转换，只能显式地进行类型转换。注意：只有一个参数的构造函数，或者构造函数有n个参数，但有n-1个参数提供了默认值，这样的情况才能进行类型">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-11T16:45:36.276Z">
+<meta property="og:updated_time" content="2019-06-21T12:43:06.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++基础语法">
 <meta name="twitter:description" content="explicit:在C++中，我们有时可以将构造函数用作自动类型转换函数。但这种自动特性并非总是合乎要求的，有时会导致意外的类型转换，因此，C++新增了关键字explicit，用于关闭这种自动特性。即被explicit关键字修饰的类构造函数，不能进行自动地隐式类型转换，只能显式地进行类型转换。注意：只有一个参数的构造函数，或者构造函数有n个参数，但有n-1个参数提供了默认值，这样的情况才能进行类型">
@@ -413,7 +413,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-12 00:45:36" itemprop="dateModified" datetime="2019-06-12T00:45:36+08:00">2019-06-12</time>
+                <time title="修改时间：2019-06-21 20:43:06" itemprop="dateModified" datetime="2019-06-21T20:43:06+08:00">2019-06-21</time>
               
             
           </span>
@@ -447,8 +447,13 @@
       
 
       
-        <p>explicit:<br>在C++中，我们有时可以将构造函数用作自动类型转换函数。但这种自动特性并非总是合乎要求的，有时会导致意外的类型转换，因此，C++新增了关键字explicit，用于关闭这种自动特性。即被explicit关键字修饰的类构造函数，不能进行自动地隐式类型转换，只能显式地进行类型转换。<br>注意：只有一个参数的构造函数，或者构造函数有n个参数，但有n-1个参数提供了默认值，这样的情况才能进行类型转换。</p>
-<p>inline<br>引入inline函数的主要原因是用它替代C中复杂易错不易维护的宏函数，可消除所有与调用相关的痕迹以及性能的损失。inline通过消除调用开销来提升性能。<br>以下情况不宜使用内联：<br>(1) 如果函数体内的代码比较长，使用内联将导致内存消耗代价较高。<br>(2) 如果函数体内出现循环，那么执行函数体内代码的时间要比函数调用的开销大。<br>(3)  类的构造函数和析构函数容易让人误解成使用内联更有效。</p>
+        <h2 id="explicit"><a href="#explicit" class="headerlink" title="explicit:"></a>explicit:</h2><p>在C++中，我们有时可以将构造函数用作自动类型转换函数。但这种自动特性并非总是合乎要求的，有时会导致意外的类型转换，因此，C++新增了关键字explicit，用于关闭这种自动特性。即被explicit关键字修饰的类构造函数，不能进行自动地隐式类型转换，只能显式地进行类型转换。<br>注意：只有一个参数的构造函数，或者构造函数有n个参数，但有n-1个参数提供了默认值，这样的情况才能进行类型转换。</p>
+<h2 id="inline"><a href="#inline" class="headerlink" title="inline"></a>inline</h2><p>引入inline函数的主要原因是用它替代C中复杂易错不易维护的宏函数，可消除所有与调用相关的痕迹以及性能的损失。inline通过消除调用开销来提升性能。<br>以下情况不宜使用内联：<br>(1) 如果函数体内的代码比较长，使用内联将导致内存消耗代价较高。<br>(2) 如果函数体内出现循环，那么执行函数体内代码的时间要比函数调用的开销大。<br>(3) 类的构造函数和析构函数容易让人误解成使用内联更有效，不要用内联。</p>
+<h2 id="重载（overload）与重写（override）"><a href="#重载（overload）与重写（override）" class="headerlink" title="重载（overload）与重写（override）"></a>重载（overload）与重写（override）</h2><p>重载：相同的范围（在同一个类中），函数名字相同，参数不同，virtual关键字可有可无。注意：函数返回类型不同不能算。<br>重写：指派生类函数重写基类函数，是C++的多态的表现<br>不同的范围（分别位于派生类与基类），函数名字相同，参数相同，基类函数必须有virtual关键字。</p>
+<p>区别重载与重写并不算困难，但是C++的隐藏规则（遮蔽现象）使问题复杂性陡然增加。这里“隐藏”是指派生类的函数屏蔽了与其同名的基类函数，规则如下：<br>（1）如果派生类的函数与基类的函数同名，但是参数不同。此时，不论有无virtual关键字，基类的函数将被隐藏。<br>（2）如果派生类的函数与基类的函数同名，并且参数也相同，但是基类函数没有virtual关键字。此时，基类的函数被隐藏。<br>这种隐藏规则，不仅仅是表现在对成员函数上，对同名的data member也是如此。<br>另一个关于虚函数很微妙的错误情况：参数相同，但是基类的函数是const的，派生类的函数却不是。根据指针类型调用函数<br>一个函数在基类为普通函数，在派生类定义为virtual的函数称为越位，函数行为依赖于指针/引用的类型，而不是实际对象的类型。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">float</span> x)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"Base::f(float) "</span> &lt;&lt; x &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">g</span><span class="params">(<span class="keyword">float</span> x)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"Base::g(float) "</span> &lt;&lt; x &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">h</span><span class="params">(<span class="keyword">float</span> x)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"Base::h(float) "</span> &lt;&lt; x &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Derived</span> :</span> <span class="keyword">public</span> Base</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">float</span> x)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"Derived::f(float) "</span> &lt;&lt; x &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">g</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"Derived::g(int) "</span> &lt;&lt; x &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">h</span><span class="params">(<span class="keyword">float</span> x)</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">"Derived::h(float) "</span> &lt;&lt; x &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">	Derived  d;</span><br><span class="line">	Base *pb = &amp;d;</span><br><span class="line">	Derived *pd = &amp;d;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Good : behavior depends solely on type of the object</span></span><br><span class="line">	pb-&gt;f(<span class="number">3.14f</span>); <span class="comment">// Derived::f(float) 3.14</span></span><br><span class="line">	pd-&gt;f(<span class="number">3.14f</span>); <span class="comment">// Derived::f(float) 3.14</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// Bad : behavior depends on type of the pointer</span></span><br><span class="line">	pb-&gt;g(<span class="number">3.14f</span>); <span class="comment">// Base::g(float) 3.14</span></span><br><span class="line">	pd-&gt;g(<span class="number">3.14f</span>); <span class="comment">// Derived::g(int) 3</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// Bad : behavior depends on type of the pointer</span></span><br><span class="line">	pb-&gt;h(<span class="number">3.14f</span>); <span class="comment">// Base::h(float) 3.14</span></span><br><span class="line">	pd-&gt;h(<span class="number">3.14f</span>); <span class="comment">// Derived::h(float) 3.14</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结论：<br>任何条件下都要禁止重新定义继承而来的非虚函数。<br>在派生类的虚函数后面加上override编译g和f会报错，以此来严格重写基类中的虚函数。</p>
 <p>二维数组</p>
 <p>类型说明typedef：<br>typedef  类型 定义名;<br>类型说明只定义了一个数据类型的新名字而不是定义一种新的数据类型。定义名表示这个类型的新名字。只是个别名而已<br>类型解释Typename：<br>Typename关键字告诉了编译器把一个特殊的名字解释成一个类型，在下列情况下必须对一个name使用typename关键字：<br>1．一个唯一的name（可以作为类型理解），它嵌套在另一个类型中的。<br>2．依赖于一个模板参数，就是说：模板参数在某种程度上包含这个name。当模板参数使编译器在指认一个类型时产生了误解。</p>
 <p>在声明 template parameters（模板参数）时，class 和 typename 是可互换的。<br>用 typename 去标识 nested dependent type names（嵌套依赖类型名），在 base class lists（基类列表）中或在一个 member initialization list（成员初始化列表）中作为一个 base class identifier（基类标识符）时除外。</p>
@@ -545,8 +550,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -563,7 +577,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -596,9 +610,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -625,6 +637,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#explicit"><span class="nav-text">explicit:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inline"><span class="nav-text">inline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重载（overload）与重写（override）"><span class="nav-text">重载（overload）与重写（override）</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

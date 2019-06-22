@@ -96,15 +96,20 @@
 
 
 
-  <meta name="keywords" content="设计模式">
+  <meta name="description" content="设计模式解决问题：实现：缺点： 12345678910```输出：## 观察者模式 Observer观察者模式：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都要得到通知并自动更新。解决问题：一个对象更新，其它对象也要更新。实现：目标类通知函数通知所有观察者自动更新。在目标类中增加一个链表来存放观察者们。缺点：![avatar](/images/blog_book">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式(3)结构型">
-<meta property="og:url" content="http://yoursite.com/2019/06/21/ModelDesign/ModelDesign-2/index.html">
+<meta property="og:title" content="设计模式_组件协作(Template Method、Strategy、Observer)">
+<meta property="og:url" content="http://yoursite.com/2019/06/21/ModelDesign/ModelDesign_1/index.html">
 <meta property="og:site_name" content="WangHao_Blog">
+<meta property="og:description" content="设计模式解决问题：实现：缺点： 12345678910```输出：## 观察者模式 Observer观察者模式：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都要得到通知并自动更新。解决问题：一个对象更新，其它对象也要更新。实现：目标类通知函数通知所有观察者自动更新。在目标类中增加一个链表来存放观察者们。缺点：![avatar](/images/blog_book">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-21T06:42:19.434Z">
+<meta property="og:image" content="http://yoursite.com/images/blog_book/ModelDesign/TemplateMethod_1.png">
+<meta property="og:updated_time" content="2019-06-22T05:32:47.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式(3)结构型">
+<meta name="twitter:title" content="设计模式_组件协作(Template Method、Strategy、Observer)">
+<meta name="twitter:description" content="设计模式解决问题：实现：缺点： 12345678910```输出：## 观察者模式 Observer观察者模式：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都要得到通知并自动更新。解决问题：一个对象更新，其它对象也要更新。实现：目标类通知函数通知所有观察者自动更新。在目标类中增加一个链表来存放观察者们。缺点：![avatar](/images/blog_book">
+<meta name="twitter:image" content="http://yoursite.com/images/blog_book/ModelDesign/TemplateMethod_1.png">
 
 
 
@@ -112,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/21/ModelDesign/ModelDesign-2/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/21/ModelDesign/ModelDesign_1/">
 
 
 
@@ -122,7 +127,7 @@
   };
 </script>
 
-  <title>设计模式(3)结构型 | WangHao_Blog</title>
+  <title>设计模式_组件协作(Template Method、Strategy、Observer) | WangHao_Blog</title>
   
 
 
@@ -350,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/ModelDesign/ModelDesign-2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/ModelDesign/ModelDesign_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang Hao">
@@ -367,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式(3)结构型
+          <h1 class="post-title" itemprop="name headline">设计模式_组件协作(Template Method、Strategy、Observer)
 
               
             
@@ -393,12 +398,24 @@
                 
               
 
-              <time title="创建时间：2019-06-21 13:24:41 / 修改时间：14:42:19" itemprop="dateCreated datePublished" datetime="2019-06-21T13:24:41+08:00">2019-06-21</time>
+              <time title="创建时间：2019-06-21 13:31:38" itemprop="dateCreated datePublished" datetime="2019-06-21T13:31:38+08:00">2019-06-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-22 13:32:47" itemprop="dateModified" datetime="2019-06-22T13:32:47+08:00">2019-06-22</time>
               
             
           </span>
@@ -432,7 +449,116 @@
       
 
       
-        
+        <h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><p>解决问题：<br>实现：<br>缺点：<br><img src="/images/blog_book/ModelDesign/TemplateMethod_1.png" alt="avatar"></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">输出：</span><br><span class="line"></span><br><span class="line"><span class="comment">## 观察者模式 Observer</span></span><br><span class="line">观察者模式：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都要得到通知并自动更新。</span><br><span class="line">解决问题：一个对象更新，其它对象也要更新。</span><br><span class="line">实现：目标类通知函数通知所有观察者自动更新。在目标类中增加一个链表来存放观察者们。</span><br><span class="line">缺点：</span><br><span class="line">![avatar](<span class="regexp">/images/</span>blog_book<span class="regexp">/ModelDesign/</span>Observer_1.png)</span><br><span class="line">![avatar](<span class="regexp">/images/</span>blog_book<span class="regexp">/ModelDesign/</span>Observer_2.png)</span><br></pre></td></tr></table></figure>
+
+<p>#include “pch.h”</p>
+<p>#include <iostream></iostream></p>
+<p>#include <string></string></p>
+<p>#include <list><br>using namespace std;</list></p>
+<p>class Observer<br>{
+public:<br>    explicit Observer(const string strName)<br>    {<br>        this-&gt;m_strName = strName;<br>    }<br>    virtual ~Observer() {}<br>    virtual void UpdateState(const string strNotifyInfo) = 0;<br>protected:<br>    string m_strName;  //观察者姓名<br>};</p>
+<p>//市场部人员，具体观察者<br>class MarketEmployee :public Observer<br>{
+public:<br>    explicit MarketEmployee(const string strName) :Observer(strName){}<br>    virtual void UpdateState(const string strNotifyInfo) override<br>    {<br>        cout &lt;&lt; “市场部” &lt;&lt; this-&gt;m_strName &lt;&lt; “收到通知：” &lt;&lt; strNotifyInfo &lt;&lt; endl;<br>        if (“研发部加班” == strNotifyInfo)<br>        {<br>            cout &lt;&lt; “市场部” &lt;&lt; this-&gt;m_strName &lt;&lt; “太好了，可以正常下班了!” &lt;&lt; endl;<br>        }<br>        else if (“全体加班” == strNotifyInfo)<br>        {<br>            cout &lt;&lt; “市场部” &lt;&lt; this-&gt;m_strName &lt;&lt; “崩溃了，又要加班！” &lt;&lt; endl;<br>        }<br>    }<br>};</p>
+<p>//研发部人员，具体的观察者<br>class DevelopEmployee :public Observer<br>{
+public:<br>    explicit DevelopEmployee(const string strName) :Observer(strName){}<br>    virtual void UpdateState(const string strNotifyInfo) override<br>    {<br>        cout &lt;&lt; “研发部” &lt;&lt; this-&gt;m_strName &lt;&lt; “收到通知：” &lt;&lt; strNotifyInfo &lt;&lt; endl;<br>        if (“研发部加班” == strNotifyInfo)<br>        {<br>            cout &lt;&lt; “研发部” &lt;&lt; this-&gt;m_strName &lt;&lt; “崩溃了，又是咱们部门加班！” &lt;&lt; endl;<br>        }<br>        else if (“全体加班” == strNotifyInfo)<br>        {<br>            cout &lt;&lt; “研发部” &lt;&lt; this-&gt;m_strName &lt;&lt; “好吧，又加班！不过还好有其他人陪。” &lt;&lt; endl;<br>        }<br>    }<br>};</p>
+<p>//抽象通知者，提供基本接口定义<br>class Subject<br>{
+public:<br>    virtual ~Subject(){}<br>    virtual void Attach(Observer* pObserver) = 0;<br>    virtual void Detach(Observer* pObserver) = 0;<br>    virtual void Notify(const string strNotifyInfo) = 0;<br>protected:<br>    list&lt;Observer*&gt; m_ObserverList;                     //观察者列表<br>};</p>
+<p>//具体通知者，总经理助理<br>class Assistant :public Subject<br>{
+public:<br>    void Attach(Observer <em>pObserver)<br>    {<br>        if (pObserver != nullptr)<br>        {<br>            m_ObserverList.push_back(pObserver);<br>        }<br>    }<br>    void Detach(Observer *pOberser)<br>    {<br>        if (pOberser != nullptr)<br>        {<br>            this-&gt;m_ObserverList.remove(pOberser);<br>        }<br>    }<br>    void  Notify(const string strNotifyInfo)<br>    {<br>        list&lt;Observer</em>&gt;::iterator iter;<br>        for (iter = m_ObserverList.begin(); iter != m_ObserverList.end(); ++iter)<br>        {<br>            (*iter)-&gt;UpdateState(strNotifyInfo);<br>        }<br>    }<br>};</p>
+<p>int main()<br>{
+    //创建通知者，即总经理助理<br>    Subject* pAssistant = new Assistant();</p>
+<pre><code>//创建观察者
+Observer* pXiaoWang = new MarketEmployee(&quot;小王&quot;);
+Observer* pXiaoLi = new DevelopEmployee(&quot;小李&quot;);
+Observer* pXiaoZhang = new DevelopEmployee(&quot;小张&quot;);
+
+//加入观察队列
+pAssistant-&gt;Attach(pXiaoWang);
+pAssistant-&gt;Attach(pXiaoLi);
+pAssistant-&gt;Attach(pXiaoZhang);
+
+//事件1
+pAssistant-&gt;Notify(&quot;全体加班&quot;);
+cout &lt;&lt; endl;
+
+//事件2
+pAssistant-&gt;Notify(&quot;研发部加班&quot;);
+cout &lt;&lt; endl;
+
+//小张和助理闹矛盾了，助理将小张移出通知序列
+pAssistant-&gt;Detach(pXiaoZhang);
+
+//新事件
+pAssistant-&gt;Notify(&quot;全体加班&quot;);
+cout &lt;&lt; endl;
+
+delete pXiaoWang;
+pXiaoWang = nullptr;
+
+delete pXiaoLi;
+pXiaoLi = nullptr;
+
+delete pXiaoZhang;
+pXiaoZhang = nullptr;
+
+return 0;</code></pre><p>}</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br><span class="line">市场部小王收到通知：全体加班</span><br><span class="line">市场部小王崩溃了，又要加班！</span><br><span class="line">研发部小李收到通知：全体加班</span><br><span class="line">研发部小李好吧，又加班！不过还好有其他人陪。</span><br><span class="line">研发部小张收到通知：全体加班</span><br><span class="line">研发部小张好吧，又加班！不过还好有其他人陪。</span><br><span class="line"></span><br><span class="line">市场部小王收到通知：研发部加班</span><br><span class="line">市场部小王太好了，可以正常下班了!</span><br><span class="line">研发部小李收到通知：研发部加班</span><br><span class="line">研发部小李崩溃了，又是咱们部门加班！</span><br><span class="line">研发部小张收到通知：研发部加班</span><br><span class="line">研发部小张崩溃了，又是咱们部门加班！</span><br><span class="line"></span><br><span class="line">市场部小王收到通知：全体加班</span><br><span class="line">市场部小王崩溃了，又要加班！</span><br><span class="line">研发部小李收到通知：全体加班</span><br><span class="line">研发部小李好吧，又加班！不过还好有其他人陪。</span><br><span class="line"></span><br><span class="line"><span class="section">## 策略模式 Strategy</span></span><br><span class="line">策略模式:是指定义一系列的算法，把它们一个个封装起来，并且使它们可以互相替换。使得算法可以独立于使用它的客户而变化，也就是说这些算法所完成的功能是一样的，对外接口是一样的，只是各自现实上存在差异。 </span><br><span class="line">解决问题：在有多种算法相似的情况下，使用 if…else 所带来的复杂和难以维护。 </span><br><span class="line">实现：将这些算法封装成一个一个的类，实现同一个接口对算法进行调用。</span><br><span class="line">缺点：策略类会增多，所有策略类都需要对外暴露。</span><br><span class="line">![<span class="string">avatar</span>](<span class="link">/images/blog_book/ModelDesign/Strategy_1.png</span>)</span><br></pre></td></tr></table></figure>
+
+<p>#include “pch.h”</p>
+<p>#include <iostream></iostream></p>
+<p>#include <functional><br>using namespace std;<br>//传统策略模式实现<br>class Hurt<br>{
+public:<br>    virtual void redBuff() = 0;<br>    virtual ~Hurt(){}<br>};</functional></p>
+<p>class AdcHurt :public Hurt<br>{
+public:<br>    virtual void redBuff() override<br>    {<br>        cout &lt;&lt; “Adc hurt” &lt;&lt; endl;<br>    }<br>};</p>
+<p>class ApcHurt :public Hurt<br>{
+public:<br>    virtual void redBuff() override<br>    {<br>        cout &lt;&lt; “Apc hurt” &lt;&lt; endl;<br>    }<br>};</p>
+<p>//方法1：传入一个指针参数<br>class Soldier<br>{
+public:<br>    explicit Soldier(Hurt* hurt) :m_hurt(hurt){}<br>    ~Soldier(){}<br>    void beInjured()<br>    {<br>        m_hurt-&gt;redBuff();<br>    }<br>private:<br>    Hurt* m_hurt;<br>};</p>
+<p>//方法2：传入一个参数标签<br>typedef enum<br>{
+    ADC,<br>    APC<br>}HurtType;</p>
+<p>class Master<br>{
+public:<br>    explicit Master(HurtType type)<br>    {<br>        switch (type)<br>        {<br>        case ADC:<br>            m_hurt = new AdcHurt;<br>            break;<br>        case APC:<br>            m_hurt = new ApcHurt;<br>            break;<br>        default:<br>            m_hurt = nullptr;<br>            break;<br>        }<br>    }<br>    ~Master()<br>    {<br>        if (m_hurt != nullptr)<br>        {<br>            delete m_hurt;<br>        }<br>    }<br>    void beInjured()<br>    {<br>        if (m_hurt != nullptr)<br>        {<br>            m_hurt-&gt;redBuff();<br>        }<br>        else<br>        {<br>            cout &lt;&lt; “Not hurt” &lt;&lt; endl;<br>        }<br>    }<br>private:<br>    Hurt* m_hurt;<br>};</p>
+<p>//方法3：使用模板类<br>template <typename t><br>class Tank<br>{
+public:<br>    void beInjured()<br>    {<br>        m_hurt.redBuff();<br>    }<br>private:<br>    T m_hurt;<br>};</typename></p>
+<p>//使用函数指针实现策略模式<br>void adcHurt(int num)<br>{
+    cout &lt;&lt; “adc hurt:” &lt;&lt; num &lt;&lt; endl;<br>}</p>
+<p>void apcHurt(int num)<br>{
+    cout &lt;&lt; “apc hurt:” &lt;&lt; num &lt;&lt; endl;<br>}</p>
+<p>//普通函数指针<br>class Aid<br>{
+public:<br>    typedef void(*HurtFun)(int);</p>
+<pre><code>explicit Aid(HurtFun fun) :m_fun(fun){}
+void beInjured(int num)
+{
+    m_fun(num);
+}</code></pre><p>private:<br>    HurtFun m_fun;<br>};</p>
+<p>//使用std::function , 头文件：#include<functional><br>class Bowman<br>{
+public:<br>    typedef function&lt;void(int)&gt; HurtFunc;</functional></p>
+<pre><code>explicit Bowman(HurtFunc fun) :m_fun(fun)
+{
+}
+void beInjured(int num)
+{
+    m_fun(num);
+}</code></pre><p>private:<br>    HurtFunc m_fun;<br>};</p>
+<p>int main()<br>{
+    Aid aid(adcHurt);<br>    aid.beInjured(9);</p>
+<pre><code>Bowman b(apcHurt);
+b.beInjured(8);</code></pre><p>}</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br><span class="line">adc hurt:9</span><br><span class="line">apc hurt:8</span><br><span class="line"></span><br><span class="line"><span class="section">## 模板方法 Template Method</span></span><br><span class="line">模板方法：定义一个操作中的算法的骨架（稳定），而将一些步骤延迟（变化）到子类中。Template Method使得子类可以不改变（复用）一个算法的结构即可重定义（override重写）该算法的某些特定步骤。</span><br><span class="line">解决问题：多个子类有相同的方法，并且逻辑相同，细节有差异。</span><br><span class="line">实现：在抽象类实现通用接口，将核心算法设计为模板方法，细节变化在子类实现，使用虚函数</span><br><span class="line">缺点：每一个不同的实现都需要一个子类来实现，导致类的个数增加，使得系统更加庞大。</span><br><span class="line">![<span class="string">avatar</span>](<span class="link">/images/blog_book/ModelDesign/TemplateMethod_1.png</span>)</span><br></pre></td></tr></table></figure>
+
+<p>#include “pch.h”</p>
+<p>#include <iostream><br>using namespace std;<br>//传统的车牌识别算法分为以下四个步骤：预处理、车牌定位、车牌分割、字符识别。<br>class AbstractPlateAlg<br>{
+public:<br>    void AlgMethod()<br>    {<br>        PreProcesser();<br>        PlateLocation();<br>        PlateSegmation();<br>        PlateRecognition();<br>    }<br>    virtual ~AbstractPlateAlg(){}<br>protected:<br>    //预处理<br>    virtual void PreProcesser() = 0;<br>    //车牌定位<br>    virtual void PlateLocation() = 0;<br>    //车牌定位<br>    virtual void PlateSegmation() = 0;<br>    //车牌定位<br>    virtual void PlateRecognition() = 0;<br>};<br>//具体类,实现算法A<br>class ConcreateAlgA :public AbstractPlateAlg<br>{ 
+protected:<br>    virtual void PreProcesser() override<br>    {<br>        cout &lt;&lt; “算法A，车牌预处理” &lt;&lt; endl;<br>    }<br>    virtual void PlateLocation() override<br>    {<br>        cout &lt;&lt; “算法A，车牌定位” &lt;&lt; endl;<br>    }<br>    virtual void PlateSegmation() override<br>    {<br>        cout &lt;&lt; “算法A，车牌分割” &lt;&lt; endl;<br>    }<br>    virtual void PlateRecognition() override<br>    {<br>        cout &lt;&lt; “算法A，字符识别” &lt;&lt; endl;<br>    }<br>};<br>//具体类,实现算法B<br>class ConcreateAlgB :public AbstractPlateAlg<br>{ 
+protected:<br>    virtual void PreProcesser() override<br>    {<br>        cout &lt;&lt; “算法B，车牌预处理” &lt;&lt; endl;<br>    }<br>    virtual void PlateLocation() override<br>    {<br>        cout &lt;&lt; “算法B，车牌定位” &lt;&lt; endl;<br>    }<br>    virtual void PlateSegmation() override<br>    {<br>        cout &lt;&lt; “算法B，车牌分割” &lt;&lt; endl;<br>    }<br>    virtual void PlateRecognition() override<br>    {<br>        cout &lt;&lt; “算法B，字符识别” &lt;&lt; endl;<br>    }<br>}; </iostream></p>
+<p>int main()<br>{ 
+    AbstractPlateAlg <em>pAlgA = new ConcreateAlgA();<br>    if (pAlgA != nullptr)<br>    {<br>        pAlgA-&gt;AlgMethod();<br>        delete pAlgA;<br>        pAlgA = nullptr;<br>    }<br>    cout &lt;&lt; “<strong><strong><strong><strong><strong><strong><strong><strong><strong>*****</strong></strong></strong></strong></strong></strong></strong></strong></strong></em>“ &lt;&lt; endl;<br>    AbstractPlateAlg *pAlgB = new ConcreateAlgB();<br>    if (pAlgB != nullptr)<br>    {<br>        pAlgB-&gt;AlgMethod();<br>        delete pAlgB;<br>        pAlgB = nullptr;<br>    }<br>}
+```
+输出：<br>算法A，车牌预处理<br>算法A，车牌定位<br>算法A，车牌分割<br>算法A，字符识别</p>
+<hr>
+<p>算法B，车牌预处理<br>算法B，车牌定位<br>算法B，车牌分割<br>算法B，字符识别</p>
+
       
     </div>
 
@@ -478,8 +604,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/21/ModelDesign/ModelDesign-3/" rel="prev" title="设计模式(4)行为型">
-                设计模式(4)行为型 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/21/Algorithm/leetcode/1-Two_Sum/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -524,8 +650,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -542,7 +677,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -575,9 +710,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -604,6 +737,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式"><span class="nav-text">设计模式</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
