@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="title: 1.Two_Sumdate: 2019-06-22 14:03:08 tags: leetcodeEasy Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input wo">
+  <meta name="description" content="Easy Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution, and you may not use the sa">
+<meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WangHao_Blog">
+<meta property="og:title" content="1.Two_Sum">
 <meta property="og:url" content="http://yoursite.com/2019/06/22/Algorithm/leetcode/1-Two-Sum/index.html">
 <meta property="og:site_name" content="WangHao_Blog">
-<meta property="og:description" content="title: 1.Two_Sumdate: 2019-06-22 14:03:08 tags: leetcodeEasy Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input wo">
+<meta property="og:description" content="Easy Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution, and you may not use the sa">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-23T06:00:43.312Z">
+<meta property="og:updated_time" content="2019-06-23T06:20:24.804Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WangHao_Blog">
-<meta name="twitter:description" content="title: 1.Two_Sumdate: 2019-06-22 14:03:08 tags: leetcodeEasy Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input wo">
+<meta name="twitter:title" content="1.Two_Sum">
+<meta name="twitter:description" content="Easy Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution, and you may not use the sa">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title> | WangHao_Blog</title>
+  <title>1.Two_Sum | WangHao_Blog</title>
   
 
 
@@ -369,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">1.Two_Sum
 
               
             
@@ -412,7 +413,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-23 14:00:43" itemprop="dateModified" datetime="2019-06-23T14:00:43+08:00">2019-06-23</time>
+                <time title="修改时间：2019-06-23 14:20:24" itemprop="dateModified" datetime="2019-06-23T14:20:24+08:00">2019-06-23</time>
               
             
           </span>
@@ -446,14 +447,10 @@
       
 
       
-        <hr>
-<p>title: 1.Two_Sum<br>date: 2019-06-22 14:03:08</p>
-<h2 id="tags-leetcode"><a href="#tags-leetcode" class="headerlink" title="tags: leetcode"></a>tags: leetcode</h2><p><strong>Easy</strong></p>
+        <p><strong>Easy</strong></p>
 <p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
 <p>Example:<br>Given nums = [2, 7, 11, 15], target = 9,<br>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (m.count(target - nums[i])) &#123;</span><br><span class="line">                <span class="keyword">return</span> &#123; m[target - nums[i]],i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            m[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
       
     </div>
 
@@ -473,6 +470,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+        </div>
       
 
       
@@ -539,17 +542,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -599,7 +593,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -626,23 +622,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-leetcode"><span class="nav-text">tags: leetcode</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
