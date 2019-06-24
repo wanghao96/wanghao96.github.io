@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="MediumThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
+<meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/05/26/hello-world/index.html">
+<meta property="og:title" content="6.ZigZag_Conversion">
+<meta property="og:url" content="http://yoursite.com/2019/06/24/Algorithm/leetcode/6-ZigZag_Conversion/index.html">
 <meta property="og:site_name" content="WangHao_Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="MediumThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-26T07:34:29.904Z">
+<meta property="og:updated_time" content="2019-06-24T13:10:27.055Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="6.ZigZag_Conversion">
+<meta name="twitter:description" content="MediumThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/26/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/24/Algorithm/leetcode/6-ZigZag_Conversion/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>Hello World | WangHao_Blog</title>
+  <title>6.ZigZag_Conversion | WangHao_Blog</title>
   
 
 
@@ -352,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/26/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/Algorithm/leetcode/6-ZigZag_Conversion/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang Hao">
@@ -369,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">6.ZigZag_Conversion
 
               
             
@@ -395,9 +396,13 @@
                 
               
 
-              <time title="创建时间：2019-05-26 15:34:29" itemprop="dateCreated datePublished" datetime="2019-05-26T15:34:29+08:00">2019-05-26</time>
+              <time title="创建时间：2019-06-24 15:36:00 / 修改时间：21:10:27" itemprop="dateCreated datePublished" datetime="2019-06-24T15:36:00+08:00">2019-06-24</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -430,19 +435,16 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <p><strong>Medium</strong><br>The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+<p>P   A   H   N<br>A P L S I I G<br>Y   I   R<br>And then read line by line: “PAHNAPLSIIGYIR”</p>
+<p>Write the code that will take a string and make this conversion given a number of rows:</p>
+<p>string convert(string s, int numRows);<br>Example 1:</p>
+<p>Input: s = “PAYPALISHIRING”, numRows = 3<br>Output: “PAHNAPLSIIGYIR”<br>Example 2:</p>
+<p>Input: s = “PAYPALISHIRING”, numRows = 4<br>Output: “PINALSIGYAHRPI”<br>Explanation:</p>
+<p>P     I    N<br>A   L S  I G<br>Y A   H R<br>P     I</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">ZigZag</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if numRows = 4;</span></span><br><span class="line"><span class="comment">s0       s6       s12   ...</span></span><br><span class="line"><span class="comment">s1   s5  s7  s11  s13  s17</span></span><br><span class="line"><span class="comment">s2 s4    s8 s10   s14 s16</span></span><br><span class="line"><span class="comment">s3       s9       s15</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">num of element in one V loop: 6 = (4-1)*2 = (numRows-1)*2</span></span><br><span class="line"><span class="comment">loopLen = 6</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">row0: s0, s6, s12...  = s[x * loopLen]</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    head of the loop: x*loopLen</span></span><br><span class="line"><span class="comment">    end of the loop: (x+1)*loopLen-1 = x*loopLen + loopLen-1</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">left side of V: s[0] ~ s[numRows]</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">row</span></span><br><span class="line"><span class="comment">0   s0</span></span><br><span class="line"><span class="comment">1   s1 = s[+row]</span></span><br><span class="line"><span class="comment">2   s2 = s[+row]</span></span><br><span class="line"><span class="comment">3   s3</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">right side of V: </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">row</span></span><br><span class="line"><span class="comment">0   -</span></span><br><span class="line"><span class="comment">1   s5  = s[numRows -1] = s[numRows -row]</span></span><br><span class="line"><span class="comment">2   s4  = s[numRows -2] = s[numRows -row]</span></span><br><span class="line"><span class="comment">3   -</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">string</span> convert(<span class="keyword">string</span> s, <span class="keyword">int</span> numRows) &#123;</span><br><span class="line">        <span class="built_in">if</span>(numRows &lt; <span class="number">2</span> || numRows &gt;= s.length())</span><br><span class="line">            <span class="built_in">return</span> s;</span><br><span class="line">        <span class="keyword">string</span> res = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">size</span> = <span class="number">2</span> * numRows - <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; numRows; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">for</span>(<span class="keyword">int</span> j = i; j &lt; s.<span class="built_in">size</span>(); j += <span class="built_in">size</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                res += s[j];</span><br><span class="line">                <span class="keyword">int</span> tmp = j + <span class="built_in">size</span> - <span class="number">2</span>*i;</span><br><span class="line">                <span class="built_in">if</span>(i!=<span class="number">0</span> &amp;&amp; i!=numRows<span class="number">-1</span> &amp;&amp; tmp &lt; s.<span class="built_in">size</span>())</span><br><span class="line">                    res += s[tmp];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
+<p>字符串重新排成之字形，第一列就是开头的前n个字母，即每行起始就是s[numRows]<br>现在来看第一行和最后一行，相邻字符间距2<em>numRows-2<br>其它行相对来说还会多一个字符，多出来的字符相对前一个相邻字符的间距是 2</em>(numRows-i-1)</p>
 
       
     </div>
@@ -464,6 +466,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+        </div>
+      
 
       
       
@@ -473,15 +481,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/06/24/Algorithm/leetcode/7-Reverse_Integer/" rel="next" title="6.ZigZag_Conversion">
+                <i class="fa fa-chevron-left"></i> 6.ZigZag_Conversion
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/26/NextBlog/MakeDown/" rel="prev" title="MakeDown">
-                MakeDown <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -525,17 +533,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -616,23 +615,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       

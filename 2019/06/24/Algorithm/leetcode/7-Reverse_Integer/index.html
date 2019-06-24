@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="EasyGiven a 32-bit signed integer, reverse digits of an integer. Example 1: Input: 123Output: 321Example 2: Input: -123Output: -321Example 3: Input: 120Output: 21Note:Assume we are dealing with an env">
+<meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/05/26/hello-world/index.html">
+<meta property="og:title" content="6.ZigZag_Conversion">
+<meta property="og:url" content="http://yoursite.com/2019/06/24/Algorithm/leetcode/7-Reverse_Integer/index.html">
 <meta property="og:site_name" content="WangHao_Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="EasyGiven a 32-bit signed integer, reverse digits of an integer. Example 1: Input: 123Output: 321Example 2: Input: -123Output: -321Example 3: Input: 120Output: 21Note:Assume we are dealing with an env">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-26T07:34:29.904Z">
+<meta property="og:updated_time" content="2019-06-24T10:00:46.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="6.ZigZag_Conversion">
+<meta name="twitter:description" content="EasyGiven a 32-bit signed integer, reverse digits of an integer. Example 1: Input: 123Output: 321Example 2: Input: -123Output: -321Example 3: Input: 120Output: 21Note:Assume we are dealing with an env">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/26/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/24/Algorithm/leetcode/7-Reverse_Integer/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>Hello World | WangHao_Blog</title>
+  <title>6.ZigZag_Conversion | WangHao_Blog</title>
   
 
 
@@ -352,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/26/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/Algorithm/leetcode/7-Reverse_Integer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang Hao">
@@ -369,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">6.ZigZag_Conversion
 
               
             
@@ -395,9 +396,13 @@
                 
               
 
-              <time title="创建时间：2019-05-26 15:34:29" itemprop="dateCreated datePublished" datetime="2019-05-26T15:34:29+08:00">2019-05-26</time>
+              <time title="创建时间：2019-06-24 15:36:00 / 修改时间：18:00:46" itemprop="dateCreated datePublished" datetime="2019-06-24T15:36:00+08:00">2019-06-24</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -430,20 +435,15 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <p><strong>Easy</strong><br>Given a 32-bit signed integer, reverse digits of an integer.</p>
+<p>Example 1:</p>
+<p>Input: 123<br>Output: 321<br>Example 2:</p>
+<p>Input: -123<br>Output: -321<br>Example 3:</p>
+<p>Input: 120<br>Output: 21<br>Note:<br>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−2^31,  2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.<br>注意正负号及int所表示的最大值，反转后是否越界</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x!=<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">abs</span>(res) &gt; (INT_MAX/<span class="number">10</span>))</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            res = res*<span class="number">10</span> + x%<span class="number">10</span>;</span><br><span class="line">            x/=<span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
-
+<p>更快的代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">bool</span> negative = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> num = x;</span><br><span class="line">        <span class="keyword">if</span>(x &lt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            negative = <span class="literal">true</span>;</span><br><span class="line">            num = <span class="built_in">abs</span>((<span class="keyword">long</span> <span class="keyword">long</span>)x);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(num &gt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            res = res*<span class="number">10</span> + (num % <span class="number">10</span>);</span><br><span class="line">            num = num / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(res &gt; INT_MAX)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> negative? <span class="number">-1</span>*(<span class="keyword">int</span>)res : (<span class="keyword">int</span>)res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -464,6 +464,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+        </div>
+      
 
       
       
@@ -473,14 +479,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/06/24/ModelDesign/ModelDesign_3/" rel="next" title="设计模式_对象创建(Factory Method、Abstract Factory、Prototype、Buider)">
+                <i class="fa fa-chevron-left"></i> 设计模式_对象创建(Factory Method、Abstract Factory、Prototype、Buider)
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/26/NextBlog/MakeDown/" rel="prev" title="MakeDown">
-                MakeDown <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/24/Algorithm/leetcode/6-ZigZag_Conversion/" rel="prev" title="6.ZigZag_Conversion">
+                6.ZigZag_Conversion <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -525,17 +535,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -616,23 +617,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
