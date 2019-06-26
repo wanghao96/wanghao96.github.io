@@ -99,14 +99,14 @@
   <meta name="description" content="MediumGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000. Example 1: Input: “babad”Output: “bab”Note: “aba” is also a valid answer.Examp">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5.Longest_Palindromic_Substring">
+<meta property="og:title" content="5.Longest_Palindromic_Substring 最长回文子串">
 <meta property="og:url" content="http://yoursite.com/2019/06/21/Algorithm/leetcode/5-Longest-Palindromic-Substring/index.html">
 <meta property="og:site_name" content="WangHao_Blog">
 <meta property="og:description" content="MediumGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000. Example 1: Input: “babad”Output: “bab”Note: “aba” is also a valid answer.Examp">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-23T09:51:46.771Z">
+<meta property="og:updated_time" content="2019-06-26T10:13:48.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="5.Longest_Palindromic_Substring">
+<meta name="twitter:title" content="5.Longest_Palindromic_Substring 最长回文子串">
 <meta name="twitter:description" content="MediumGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000. Example 1: Input: “babad”Output: “bab”Note: “aba” is also a valid answer.Examp">
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>5.Longest_Palindromic_Substring | WangHao_Blog</title>
+  <title>5.Longest_Palindromic_Substring 最长回文子串 | WangHao_Blog</title>
   
 
 
@@ -370,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">5.Longest_Palindromic_Substring
+          <h1 class="post-title" itemprop="name headline">5.Longest_Palindromic_Substring 最长回文子串
 
               
             
@@ -413,7 +413,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-23 17:51:46" itemprop="dateModified" datetime="2019-06-23T17:51:46+08:00">2019-06-23</time>
+                <time title="修改时间：2019-06-26 18:13:48" itemprop="dateModified" datetime="2019-06-26T18:13:48+08:00">2019-06-26</time>
               
             
           </span>
@@ -451,6 +451,10 @@
 <p>Example 1:</p>
 <p>Input: “babad”<br>Output: “bab”<br>Note: “aba” is also a valid answer.<br>Example 2:</p>
 <p>Input: “cbbd”<br>Output: “bb”</p>
+<p>给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。</p>
+<p>示例 1：</p>
+<p>输入: “babad”<br>输出: “bab”<br>注意: “aba” 也是一个有效答案。<br>示例 2：</p>
+<p>输入: “cbbd”<br>输出: “bb”</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">class</span> Solution &#123;</span><br><span class="line">    <span class="built_in">string</span> helper(int l,int r, <span class="built_in">string</span> &amp;s)&#123;       </span><br><span class="line">        <span class="keyword">while</span>(l&gt;=<span class="number">0</span> &amp;&amp; r&lt;s.<span class="built_in">length</span>() &amp;&amp; s[l] == s[r])</span><br><span class="line">        &#123;</span><br><span class="line">            l<span class="comment">--;</span></span><br><span class="line">            r++;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="built_in">        return</span> s.substr(l+<span class="number">1</span>,r-l<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">public:</span><br><span class="line">    <span class="built_in">string</span> longestPalindrome(<span class="built_in">string</span> s) &#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i&lt;s.<span class="built_in">length</span>(); i++)</span><br><span class="line">        &#123; </span><br><span class="line">            <span class="built_in">string</span> tempSubStr = helper(i,i,s);</span><br><span class="line">            <span class="keyword">if</span> (res.<span class="built_in">length</span>() &lt; tempSubStr.<span class="built_in">length</span>())</span><br><span class="line">            &#123;</span><br><span class="line">                res = tempSubStr;</span><br><span class="line">            &#125;</span><br><span class="line">			</span><br><span class="line">            tempSubStr = helper(i,i+<span class="number">1</span>,s);</span><br><span class="line">            <span class="keyword">if</span> (res.<span class="built_in">length</span>() &lt; tempSubStr.<span class="built_in">length</span>())</span><br><span class="line">            &#123;</span><br><span class="line">                res = tempSubStr;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;      </span><br><span class="line"><span class="built_in">        return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>相邻字符相同，判断连续相同字符左右两边是否对称</p>
@@ -490,8 +494,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/21/Algorithm/leetcode/hard/4-Median-of-Two-Sorted-Arrays/" rel="next" title="4.Median_of_Two_Sorted_Arrays">
-                <i class="fa fa-chevron-left"></i> 4.Median_of_Two_Sorted_Arrays
+              <a href="/2019/06/21/Algorithm/leetcode/hard/4-Median-of-Two-Sorted-Arrays/" rel="next" title="4.Median_of_Two_Sorted_Arrays 寻找两个有序数组的中位数">
+                <i class="fa fa-chevron-left"></i> 4.Median_of_Two_Sorted_Arrays 寻找两个有序数组的中位数
               </a>
             
           </div>
@@ -500,8 +504,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/22/Algorithm/leetcode/1-Two-Sum/" rel="prev" title="1.Two_Sum">
-                1.Two_Sum <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/22/Algorithm/leetcode/1-Two-Sum/" rel="prev" title="1.Two_Sum 两数之和">
+                1.Two_Sum 两数之和 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -564,7 +568,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

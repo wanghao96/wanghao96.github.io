@@ -99,14 +99,14 @@
   <meta name="description" content="MediumThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="6.ZigZag_Conversion">
+<meta property="og:title" content="6.ZigZag_Conversion Z 字形变换">
 <meta property="og:url" content="http://yoursite.com/2019/06/24/Algorithm/leetcode/6-ZigZag_Conversion/index.html">
 <meta property="og:site_name" content="WangHao_Blog">
 <meta property="og:description" content="MediumThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-24T13:10:27.055Z">
+<meta property="og:updated_time" content="2019-06-26T10:14:38.697Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="6.ZigZag_Conversion">
+<meta name="twitter:title" content="6.ZigZag_Conversion Z 字形变换">
 <meta name="twitter:description" content="MediumThe string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H   NA P L S">
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>6.ZigZag_Conversion | WangHao_Blog</title>
+  <title>6.ZigZag_Conversion Z 字形变换 | WangHao_Blog</title>
   
 
 
@@ -370,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">6.ZigZag_Conversion
+          <h1 class="post-title" itemprop="name headline">6.ZigZag_Conversion Z 字形变换
 
               
             
@@ -396,12 +396,24 @@
                 
               
 
-              <time title="创建时间：2019-06-24 15:36:00 / 修改时间：21:10:27" itemprop="dateCreated datePublished" datetime="2019-06-24T15:36:00+08:00">2019-06-24</time>
+              <time title="创建时间：2019-06-24 15:36:00" itemprop="dateCreated datePublished" datetime="2019-06-24T15:36:00+08:00">2019-06-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-26 18:14:38" itemprop="dateModified" datetime="2019-06-26T18:14:38+08:00">2019-06-26</time>
               
             
           </span>
@@ -442,6 +454,14 @@
 <p>Input: s = “PAYPALISHIRING”, numRows = 3<br>Output: “PAHNAPLSIIGYIR”<br>Example 2:</p>
 <p>Input: s = “PAYPALISHIRING”, numRows = 4<br>Output: “PINALSIGYAHRPI”<br>Explanation:</p>
 <p>P     I    N<br>A   L S  I G<br>Y A   H R<br>P     I</p>
+<p>将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。</p>
+<p>比如输入字符串为 “LEETCODEISHIRING” 行数为 3 时，排列如下：</p>
+<p>L   C   I   R<br>E T O E S I I G<br>E   D   H   N<br>之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”LCIRETOESIIGEDHN”。</p>
+<p>请你实现这个将字符串进行指定行数变换的函数：</p>
+<p>string convert(string s, int numRows);<br>示例 1:</p>
+<p>输入: s = “LEETCODEISHIRING”, numRows = 3<br>输出: “LCIRETOESIIGEDHN”<br>示例 2:</p>
+<p>输入: s = “LEETCODEISHIRING”, numRows = 4<br>输出: “LDREOEIIECIHNTSG”<br>解释:</p>
+<p>L     D     R<br>E   O E   I I<br>E C   I H   N<br>T     S     G</p>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">ZigZag</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">if numRows = 4;</span></span><br><span class="line"><span class="comment">s0       s6       s12   ...</span></span><br><span class="line"><span class="comment">s1   s5  s7  s11  s13  s17</span></span><br><span class="line"><span class="comment">s2 s4    s8 s10   s14 s16</span></span><br><span class="line"><span class="comment">s3       s9       s15</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">num of element in one V loop: 6 = (4-1)*2 = (numRows-1)*2</span></span><br><span class="line"><span class="comment">loopLen = 6</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">row0: s0, s6, s12...  = s[x * loopLen]</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    head of the loop: x*loopLen</span></span><br><span class="line"><span class="comment">    end of the loop: (x+1)*loopLen-1 = x*loopLen + loopLen-1</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">left side of V: s[0] ~ s[numRows]</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">row</span></span><br><span class="line"><span class="comment">0   s0</span></span><br><span class="line"><span class="comment">1   s1 = s[+row]</span></span><br><span class="line"><span class="comment">2   s2 = s[+row]</span></span><br><span class="line"><span class="comment">3   s3</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">right side of V: </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">row</span></span><br><span class="line"><span class="comment">0   -</span></span><br><span class="line"><span class="comment">1   s5  = s[numRows -1] = s[numRows -row]</span></span><br><span class="line"><span class="comment">2   s4  = s[numRows -2] = s[numRows -row]</span></span><br><span class="line"><span class="comment">3   -</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">string</span> convert(<span class="keyword">string</span> s, <span class="keyword">int</span> numRows) &#123;</span><br><span class="line">        <span class="built_in">if</span>(numRows &lt; <span class="number">2</span> || numRows &gt;= s.length())</span><br><span class="line">            <span class="built_in">return</span> s;</span><br><span class="line">        <span class="keyword">string</span> res = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">size</span> = <span class="number">2</span> * numRows - <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; numRows; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">for</span>(<span class="keyword">int</span> j = i; j &lt; s.<span class="built_in">size</span>(); j += <span class="built_in">size</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                res += s[j];</span><br><span class="line">                <span class="keyword">int</span> tmp = j + <span class="built_in">size</span> - <span class="number">2</span>*i;</span><br><span class="line">                <span class="built_in">if</span>(i!=<span class="number">0</span> &amp;&amp; i!=numRows<span class="number">-1</span> &amp;&amp; tmp &lt; s.<span class="built_in">size</span>())</span><br><span class="line">                    res += s[tmp];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>字符串重新排成之字形，第一列就是开头的前n个字母，即每行起始就是s[numRows]<br>现在来看第一行和最后一行，相邻字符间距2<em>numRows-2<br>其它行相对来说还会多一个字符，多出来的字符相对前一个相邻字符的间距是 2</em>(numRows-i-1)</p>
@@ -481,8 +501,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/24/Algorithm/leetcode/7-Reverse_Integer/" rel="next" title="6.ZigZag_Conversion">
-                <i class="fa fa-chevron-left"></i> 6.ZigZag_Conversion
+              <a href="/2019/06/24/ModelDesign/ModelDesign_4/" rel="next" title="设计模式_对象性能(Singleton、Flyweight)">
+                <i class="fa fa-chevron-left"></i> 设计模式_对象性能(Singleton、Flyweight)
               </a>
             
           </div>
@@ -490,6 +510,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/24/Algorithm/leetcode/7-Reverse_Integer/" rel="prev" title="7.Reverse_Integer 整数反转">
+                7.Reverse_Integer 整数反转 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -551,7 +575,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
