@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="socket 函数int  socket(int addressfamily, int type, int protocol); 参数adressfamily 举例adress family种类     功能描述AF_INET     IPV4用socketAF_INET6     IPV6用socketAF_UNIX     本地进程间通信用socket，也叫AF_LOCALAF_PACKET">
+  <meta name="description" content="1234//查看ipgcc g++ openssl mysql/mariadb nfs/ftp sz&amp;amp;rznginx redis常用命令   https://www.cnblogs.com/peida/category/309012.html  windows使用linux在windows商店上搜索linux，下载安装linux子系统windows设置-&amp;gt;更新和安全-&amp;gt;针对开发">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Socket">
-<meta property="og:url" content="http://yoursite.com/2019/07/09/Linux/base/Socket/index.html">
+<meta property="og:title" content="环境搭建">
+<meta property="og:url" content="http://yoursite.com/2019/08/10/Linux/tools/linux安装后/index.html">
 <meta property="og:site_name" content="WangHao_Blog">
-<meta property="og:description" content="socket 函数int  socket(int addressfamily, int type, int protocol); 参数adressfamily 举例adress family种类     功能描述AF_INET     IPV4用socketAF_INET6     IPV6用socketAF_UNIX     本地进程间通信用socket，也叫AF_LOCALAF_PACKET">
+<meta property="og:description" content="1234//查看ipgcc g++ openssl mysql/mariadb nfs/ftp sz&amp;amp;rznginx redis常用命令   https://www.cnblogs.com/peida/category/309012.html  windows使用linux在windows商店上搜索linux，下载安装linux子系统windows设置-&amp;gt;更新和安全-&amp;gt;针对开发">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-12T07:37:21.400Z">
+<meta property="og:updated_time" content="2019-09-14T13:03:47.350Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Socket">
-<meta name="twitter:description" content="socket 函数int  socket(int addressfamily, int type, int protocol); 参数adressfamily 举例adress family种类     功能描述AF_INET     IPV4用socketAF_INET6     IPV6用socketAF_UNIX     本地进程间通信用socket，也叫AF_LOCALAF_PACKET">
+<meta name="twitter:title" content="环境搭建">
+<meta name="twitter:description" content="1234//查看ipgcc g++ openssl mysql/mariadb nfs/ftp sz&amp;amp;rznginx redis常用命令   https://www.cnblogs.com/peida/category/309012.html  windows使用linux在windows商店上搜索linux，下载安装linux子系统windows设置-&amp;gt;更新和安全-&amp;gt;针对开发">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/09/Linux/base/Socket/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/10/Linux/tools/linux安装后/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Socket | WangHao_Blog</title>
+  <title>环境搭建 | WangHao_Blog</title>
   
 
 
@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/Linux/base/Socket/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/Linux/tools/linux安装后/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang Hao">
@@ -370,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Socket
+          <h1 class="post-title" itemprop="name headline">环境搭建
 
               
             
@@ -396,7 +396,7 @@
                 
               
 
-              <time title="创建时间：2019-07-09 16:13:29" itemprop="dateCreated datePublished" datetime="2019-07-09T16:13:29+08:00">2019-07-09</time>
+              <time title="创建时间：2019-08-10 16:12:27" itemprop="dateCreated datePublished" datetime="2019-08-10T16:12:27+08:00">2019-08-10</time>
             
 
             
@@ -413,7 +413,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-12 15:37:21" itemprop="dateModified" datetime="2019-07-12T15:37:21+08:00">2019-07-12</time>
+                <time title="修改时间：2019-09-14 21:03:47" itemprop="dateModified" datetime="2019-09-14T21:03:47+08:00">2019-09-14</time>
               
             
           </span>
@@ -447,14 +447,46 @@
       
 
       
-        <p>socket 函数<br>int  socket(int addressfamily, int type, int protocol);</p>
-<p>参数adressfamily 举例<br>adress family种类     功能描述<br>AF_INET     IPV4用socket<br>AF_INET6     IPV6用socket<br>AF_UNIX     本地进程间通信用socket，也叫AF_LOCAL<br>AF_PACKET     driver lebel socket的接口<br>参数type 举例<br>type 种类     功能描述<br>SOCK_STREAM     保证有序，都能到达。双向的byte stream<br>SOCK_DGRAM     不保证连接，顺序，支持data的最大固定长度<br>adressfamily和type的组合，来决定是使用TCP还是UDP协议</p>
-<pre><code>AF_INET+SOCK_STREAM : IPv4+TCP
-AF_INET6+SOCK_STREAM : IPv6+TCP
-AF_INET+SOCK_DGRAM : IPv4+UDP
-AF_INET6+SOCK_DGRAM : IPv6+UDP</code></pre><p>SOCK_STREAM和SOCK_DGRAM的比较：<br>socket种类     数据是否一定送达     数据到达顺序     一次送信的数据量的大小<br>SOCK_STREAM     一定     按发送顺序     没有大小限制<br>SOCK_DGRAM     不一定     有可能不是发送顺序     有大小限制</p>
-<p>bind 绑定端口<br>正常处理都是先bind，然后listen，如果不bind，直接listen，内核会自动随机分配一个端口号<br>int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);</p>
-<p>int getaddrinfo(const char <em>node, const char *service, const struct addrinfo *hints, struct addrinfo *</em>res);<br>解析网址，返回IP地址<br>struct addrinfo {<br>               int              ai_flags;<br>               int              ai_family;<br>               int              ai_socktype;<br>               int              ai_protocol;<br>               socklen_t        ai_addrlen;<br>               struct sockaddr *ai_addr;<br>               char            *ai_canonname;<br>               struct addrinfo *ai_next;<br>           };<br>void freeaddrinfo(struct addrinfo *res);</p>
+        <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span>查看ip</span><br><span class="line">gcc g++ openssl mysql<span class="regexp">/mariadb nfs/</span>ftp sz&amp;rz</span><br><span class="line">nginx redis</span><br><span class="line">常用命令   https:<span class="regexp">//</span>www.cnblogs.com<span class="regexp">/peida/</span>category<span class="regexp">/309012.html</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="windows使用linux"><a href="#windows使用linux" class="headerlink" title="windows使用linux"></a>windows使用linux</h2><p>在windows商店上搜索linux，下载安装linux子系统<br>windows设置-&gt;更新和安全-&gt;针对开发人员-&gt;开发人员模式（选择)<br>控制面板 -&gt; 程序和功能 -&gt; 启用或关闭windows功能子系统</p>
+<h2 id="vmware安装ubuntu-server之后提示："><a href="#vmware安装ubuntu-server之后提示：" class="headerlink" title="vmware安装ubuntu server之后提示："></a>vmware安装ubuntu server之后提示：</h2><p>please remove the installation medium then press  enter<br>//或Please remove the disc, close the tray (if any) and press ENTER<br>解决：<br>先关机-&gt;编辑虚拟机设置-&gt;CD/DVD 把启动时连接的勾去掉</p>
+<h2 id="虚拟机共享文件夹"><a href="#虚拟机共享文件夹" class="headerlink" title="虚拟机共享文件夹"></a>虚拟机共享文件夹</h2><p>安装vmware tools :<br>装载虚拟CD驱动器，tar解压安装程序，执行vmware-install.pl<br>选项页-&gt;共享文件夹  /mnt/()</p>
+<h2 id="xshell-远程登录-输入：ip-账号-密码登录"><a href="#xshell-远程登录-输入：ip-账号-密码登录" class="headerlink" title="xshell 远程登录 输入：ip 账号 密码登录"></a>xshell 远程登录 输入：ip 账号 密码登录</h2><ol>
+<li><p>ubuntu 查看IP ipconfig<br>Command ‘ipconfig’ not found, did you mean:</p>
+<p>command ‘iwconfig’ from deb wireless-tools (30~pre9-13ubuntu1)<br>command ‘ifconfig’ from deb net-tools (1.60+git20180626.aebd88e-1ubuntu1)<br>command ‘iconfig’ from deb ipmiutil (3.1.3-1)</p>
+</li>
+</ol>
+<p>Try: sudo apt install <deb name></deb></p>
+<p>执行 sudo apt install net-tools</p>
+<p>2.<br>E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarily unavailable)<br>E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?</p>
+<p>ps -A | grep apt  查看是否有apt-get这个程序在运行<br>sudo kill 1127  存在这样的程序在运行那么就kill掉<br>删除锁文件<br>sudo rm /var/lib/dpkg/lock<br>sudo rm /var/lib/dpkg/lock-frontend<br>3.<br>查看是否开启了ssh服务是否安装,使用命令：<br>sudo ps -e |grep ssh<br>如果安装了的是会有sshd服务的</p>
+<p>先更新资源列表，使用命令：<br>sudo apt-get update</p>
+<p>安装openssh-server，使用命令：<br>sudo apt-get install openssh-server<br>输入sudo ps -e |grep ssh查看是否安装成功</p>
+<h2 id="Linux系统信息查看命令大全"><a href="#Linux系统信息查看命令大全" class="headerlink" title="Linux系统信息查看命令大全"></a>Linux系统信息查看命令大全</h2><p>系统</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> uname -a               <span class="comment"># 查看内核/操作系统/CPU信息</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> head -n 1 /etc/issue   <span class="comment"># 查看操作系统版本</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> cat /proc/cpuinfo      <span class="comment"># 查看CPU信息</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> hostname               <span class="comment"># 查看计算机名</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> lspci -tv              <span class="comment"># 列出所有PCI设备</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> lsusb -tv              <span class="comment"># 列出所有USB设备</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> lsmod                  <span class="comment"># 列出加载的内核模块</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> env                    <span class="comment"># 查看环境变量</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">ulimit</span> -a              <span class="comment"># core file数量等信息</span></span></span><br></pre></td></tr></table></figure>
+
+<p>资源</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># free -m                # 查看内存使用量和交换区使用量</span><br><span class="line"># df -h                  # 查看各分区使用情况</span><br><span class="line"># du -sh &lt;目录名&gt;        # 查看指定目录的大小</span><br><span class="line"># grep MemTotal /proc/meminfo   # 查看内存总量</span><br><span class="line"># grep MemFree /proc/meminfo    # 查看空闲内存量</span><br><span class="line"># uptime                 # 查看系统运行时间、用户数、负载</span><br><span class="line"># cat /proc/loadavg      # 查看系统负载</span><br></pre></td></tr></table></figure>
+
+<p>磁盘和分区</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># mount | column -t      # 查看挂接的分区状态</span><br><span class="line"># fdisk -l               # 查看所有分区</span><br><span class="line"># swapon -s              # 查看所有交换分区</span><br><span class="line"># hdparm -i /dev/hda     # 查看磁盘参数(仅适用于IDE设备)</span><br><span class="line"># dmesg | grep IDE       # 查看启动时IDE设备检测状况</span><br></pre></td></tr></table></figure>
+
+<p>网络</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># ifconfig               # 查看所有网络接口的属性</span><br><span class="line"># iptables -L            # 查看防火墙设置</span><br><span class="line"># route -n               # 查看路由表</span><br><span class="line"># netstat -lntp          # 查看所有监听端口</span><br><span class="line"># netstat -antp          # 查看所有已经建立的连接</span><br><span class="line"># netstat -s             # 查看网络统计信息</span><br></pre></td></tr></table></figure>
+
+<p>进程</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># ps -ef                 # 查看所有进程</span><br><span class="line"># top                    # 实时显示进程状态</span><br></pre></td></tr></table></figure>
+
+<p>用户</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># w                      # 查看活动用户</span><br><span class="line"># id &lt;用户名&gt;            # 查看指定用户信息</span><br><span class="line"># last                   # 查看用户登录日志</span><br><span class="line"># cut -d: -f1 /etc/passwd   # 查看系统所有用户</span><br><span class="line"># cut -d: -f1 /etc/group    # 查看系统所有组</span><br><span class="line"># crontab -l             # 查看当前用户的计划任务</span><br></pre></td></tr></table></figure>
+
+<p>服务</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># chkconfig --list       # 列出所有系统服务</span><br><span class="line"># chkconfig --list | grep on    # 列出所有启动的系统服务</span><br></pre></td></tr></table></figure>
+
+<p>程序</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># rpm -qa                # 查看所有安装的软件包</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -491,8 +523,8 @@ AF_INET6+SOCK_DGRAM : IPv6+UDP</code></pre><p>SOCK_STREAM和SOCK_DGRAM的比较�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/09/Linux/base/Signal/" rel="next" title="Signal">
-                <i class="fa fa-chevron-left"></i> Signal
+              <a href="/2019/07/24/ProgramingLanguage/cpp11/" rel="next" title="cpp11">
+                <i class="fa fa-chevron-left"></i> cpp11
               </a>
             
           </div>
@@ -501,8 +533,8 @@ AF_INET6+SOCK_DGRAM : IPv6+UDP</code></pre><p>SOCK_STREAM和SOCK_DGRAM的比较�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/09/Linux/base/Thread/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/14/Linux/tools/centos7安装mysql/" rel="prev" title="centos 安装常用工具">
+                centos 安装常用工具 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -547,8 +579,17 @@ AF_INET6+SOCK_DGRAM : IPv6+UDP</code></pre><p>SOCK_STREAM和SOCK_DGRAM的比较�
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -635,6 +676,23 @@ AF_INET6+SOCK_DGRAM : IPv6+UDP</code></pre><p>SOCK_STREAM和SOCK_DGRAM的比较�
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#windows使用linux"><span class="nav-text">windows使用linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vmware安装ubuntu-server之后提示："><span class="nav-text">vmware安装ubuntu server之后提示：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机共享文件夹"><span class="nav-text">虚拟机共享文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xshell-远程登录-输入：ip-账号-密码登录"><span class="nav-text">xshell 远程登录 输入：ip 账号 密码登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux系统信息查看命令大全"><span class="nav-text">Linux系统信息查看命令大全</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

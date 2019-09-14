@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="1//  windows使用linux在windows商店上搜索linux，下载安装linux子系统windows设置-&amp;gt;更新和安全-&amp;gt;针对开发人员-&amp;gt;开发人员模式（选择)控制面板 -&amp;gt; 程序和功能 -&amp;gt; 启用或关闭windows功能子系统 vmware安装ubuntu server之后提示：please remove the installation medium">
+  <meta name="description" content="1//  mysql数据库centos7后默认安装mariadb，看了很多文章说安装mysql要先删除mariadb，删除后安装mysql但没有安装成功，mysql start有问题，又将mysql卸载，安装了mariadb 卸载mariadbrpm -qa|grep mariadb 查看安装了的yum remove mariadbrm -rf /etc/my.cnfrm -rf /var/lib">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="环境搭建">
-<meta property="og:url" content="http://yoursite.com/2019/08/10/Linux/server/envir/index.html">
+<meta property="og:title" content="centos 安装常用工具">
+<meta property="og:url" content="http://yoursite.com/2019/09/14/Linux/tools/centos7安装mysql/index.html">
 <meta property="og:site_name" content="WangHao_Blog">
-<meta property="og:description" content="1//  windows使用linux在windows商店上搜索linux，下载安装linux子系统windows设置-&amp;gt;更新和安全-&amp;gt;针对开发人员-&amp;gt;开发人员模式（选择)控制面板 -&amp;gt; 程序和功能 -&amp;gt; 启用或关闭windows功能子系统 vmware安装ubuntu server之后提示：please remove the installation medium">
+<meta property="og:description" content="1//  mysql数据库centos7后默认安装mariadb，看了很多文章说安装mysql要先删除mariadb，删除后安装mysql但没有安装成功，mysql start有问题，又将mysql卸载，安装了mariadb 卸载mariadbrpm -qa|grep mariadb 查看安装了的yum remove mariadbrm -rf /etc/my.cnfrm -rf /var/lib">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-10T13:51:30.817Z">
+<meta property="og:updated_time" content="2019-09-14T12:49:50.857Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="环境搭建">
-<meta name="twitter:description" content="1//  windows使用linux在windows商店上搜索linux，下载安装linux子系统windows设置-&amp;gt;更新和安全-&amp;gt;针对开发人员-&amp;gt;开发人员模式（选择)控制面板 -&amp;gt; 程序和功能 -&amp;gt; 启用或关闭windows功能子系统 vmware安装ubuntu server之后提示：please remove the installation medium">
+<meta name="twitter:title" content="centos 安装常用工具">
+<meta name="twitter:description" content="1//  mysql数据库centos7后默认安装mariadb，看了很多文章说安装mysql要先删除mariadb，删除后安装mysql但没有安装成功，mysql start有问题，又将mysql卸载，安装了mariadb 卸载mariadbrpm -qa|grep mariadb 查看安装了的yum remove mariadbrm -rf /etc/my.cnfrm -rf /var/lib">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/08/10/Linux/server/envir/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/14/Linux/tools/centos7安装mysql/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>环境搭建 | WangHao_Blog</title>
+  <title>centos 安装常用工具 | WangHao_Blog</title>
   
 
 
@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/Linux/server/envir/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/14/Linux/tools/centos7安装mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang Hao">
@@ -370,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">环境搭建
+          <h1 class="post-title" itemprop="name headline">centos 安装常用工具
 
               
             
@@ -396,7 +396,7 @@
                 
               
 
-              <time title="创建时间：2019-08-10 16:12:27 / 修改时间：21:51:30" itemprop="dateCreated datePublished" datetime="2019-08-10T16:12:27+08:00">2019-08-10</time>
+              <time title="创建时间：2019-09-14 20:08:11 / 修改时间：20:49:50" itemprop="dateCreated datePublished" datetime="2019-09-14T20:08:11+08:00">2019-09-14</time>
             
 
             
@@ -435,22 +435,21 @@
       
 
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="windows使用linux"><a href="#windows使用linux" class="headerlink" title="windows使用linux"></a>windows使用linux</h2><p>在windows商店上搜索linux，下载安装linux子系统<br>windows设置-&gt;更新和安全-&gt;针对开发人员-&gt;开发人员模式（选择)<br>控制面板 -&gt; 程序和功能 -&gt; 启用或关闭windows功能子系统</p>
-<h2 id="vmware安装ubuntu-server之后提示："><a href="#vmware安装ubuntu-server之后提示：" class="headerlink" title="vmware安装ubuntu server之后提示："></a>vmware安装ubuntu server之后提示：</h2><p>please remove the installation medium then press  enter<br>//或Please remove the disc, close the tray (if any) and press ENTER<br>解决：<br>先关机-&gt;编辑虚拟机设置-&gt;CD/DVD 把启动时连接的勾去掉</p>
-<h2 id="虚拟机共享文件夹"><a href="#虚拟机共享文件夹" class="headerlink" title="虚拟机共享文件夹"></a>虚拟机共享文件夹</h2><p>安装vmware tools :<br>装载虚拟CD驱动器，tar解压安装程序，执行vmware-install.pl<br>选项页-&gt;共享文件夹  /mnt/()</p>
-<h2 id="xshell-远程登录-输入：ip-账号-密码登录"><a href="#xshell-远程登录-输入：ip-账号-密码登录" class="headerlink" title="xshell 远程登录 输入：ip 账号 密码登录"></a>xshell 远程登录 输入：ip 账号 密码登录</h2><ol>
-<li><p>ubuntu 查看IP ipconfig<br>Command ‘ipconfig’ not found, did you mean:</p>
-<p>command ‘iwconfig’ from deb wireless-tools (30~pre9-13ubuntu1)<br>command ‘ifconfig’ from deb net-tools (1.60+git20180626.aebd88e-1ubuntu1)<br>command ‘iconfig’ from deb ipmiutil (3.1.3-1)</p>
-</li>
-</ol>
-<p>Try: sudo apt install <deb name></deb></p>
-<p>执行 sudo apt install net-tools</p>
-<p>2.<br>E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarily unavailable)<br>E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?</p>
-<p>ps -A | grep apt  查看是否有apt-get这个程序在运行<br>sudo kill 1127  存在这样的程序在运行那么就kill掉<br>删除锁文件<br>sudo rm /var/lib/dpkg/lock<br>sudo rm /var/lib/dpkg/lock-frontend<br>3.<br>查看是否开启了ssh服务是否安装,使用命令：<br>sudo ps -e |grep ssh<br>如果安装了的是会有sshd服务的</p>
-<p>先更新资源列表，使用命令：<br>sudo apt-get update</p>
-<p>安装openssh-server，使用命令：<br>sudo apt-get install openssh-server<br>输入sudo ps -e |grep ssh查看是否安装成功</p>
+<h2 id="mysql数据库"><a href="#mysql数据库" class="headerlink" title="mysql数据库"></a>mysql数据库</h2><p>centos7后默认安装mariadb，看了很多文章说安装mysql要先删除mariadb，删除后安装mysql但没有安装成功，mysql start有问题，又将mysql卸载，安装了mariadb</p>
+<h3 id="卸载mariadb"><a href="#卸载mariadb" class="headerlink" title="卸载mariadb"></a>卸载mariadb</h3><p>rpm -qa|grep mariadb 查看安装了的<br>yum remove mariadb<br>rm -rf /etc/my.cnf<br>rm -rf /var/lib/mysql/</p>
+<h3 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h3><p>1.查看当前安装mysql情况，查找以前是否装有mysql<br>rpm -qa|grep -i mysql<br>如下：<br>MySQL-client-5.5.25a-1.rhel5<br>MySQL-server-5.5.25a-1.rhel5<br>2.停止mysql服务、删除之前安装的mysql<br>删除命令：rpm -e –nodeps 包名</p>
+<p>rpm -ev MySQL-client-5.5.25a-1.rhel5<br>rpm -ev MySQL-server-5.5.25a-1.rhel5<br>如果提示依赖包错误，则使用以下命令尝试</p>
+<p>rpm -ev MySQL-client-5.5.25a-1.rhel5 –nodeps<br>如果提示错误：error: %preun(xxxxxx) scriptlet failed, exit status 1</p>
+<p>则用以下命令尝试：</p>
+<p>rpm -e –noscripts MySQL-client-5.5.25a-1.rhel5<br>3.查找之前老版本mysql的目录、并且删除老版本mysql的文件和库</p>
+<p>find / -name mysql<br>查找结果如下：</p>
+<p>/var/lib/mysql<br>/var/lib/mysql/mysql<br>/usr/lib64/mysql<br>删除对应的mysql目录</p>
+<p>rm -rf /var/lib/mysql<br>rm -rf /var/lib/mysql<br>rm -rf /usr/lib64/mysql</p>
+<p>注意：卸载后/etc/my.cnf不会删除，需要进行手工删除</p>
+<p>rm -rf /etc/my.cnf<br>4.再次查找机器是否安装mysql<br>rpm -qa|grep -i mysql </p>
+<h3 id="Centos7安装mariadb，支持远程访问"><a href="#Centos7安装mariadb，支持远程访问" class="headerlink" title="Centos7安装mariadb，支持远程访问"></a>Centos7安装mariadb，支持远程访问</h3><p>1.安装MariaDB：yum -y install mariadb mariadb-server<br>2.设置开机启动：systemctl enable mariadb<br>3.启动MariaDB：systemctl start mariadb<br>4.初始化配置：mysql_secure_installation<br>4.1.设置密码，会提示先输入密码<br>Enter current password for root (enter for none):&lt;–初次运行直接回车<br>Set root password? [Y/n] &lt;– 是否设置root用户密码，输入y并回车或直接回车<br>             New password: &lt;– 设置root用户的密码<br>             Re-enter new password: &lt;– 再输入一次你设置的密码<br>4.2.其他配置<br>Remove anonymous users? [Y/n] &lt;– 是否删除匿名用户，回车<br>Disallow root login remotely? [Y/n] &lt;–是否禁止root远程登录,回车,<br>Remove test database and access to it? [Y/n] &lt;– 是否删除test数据库，回车<br>Reload privilege tables now? [Y/n] &lt;– 是否重新加载权限表，回车<br>初始化MariaDB完成，接下来测试登录<br>mysql -uroot -p你的密码<br>完成。<br>5.设置远程登录：<br>使用mysql -uroot -p密码登录后，执行命令：<br>GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘你的密码的明文’ WITH GRANT OPTION;<br>FLUSH PRIVILEGES;<br>6.如果远程访问，并且数据量很大，则需要进行如下配置，否则会出现MySQL server has gone away 的错误：<br>set global max_allowed_packet=1024<em>1024</em>16;</p>
 
       
     </div>
@@ -487,8 +486,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/24/ProgramingLanguage/cpp11/" rel="next" title="cpp11">
-                <i class="fa fa-chevron-left"></i> cpp11
+              <a href="/2019/08/10/Linux/tools/linux安装后/" rel="next" title="环境搭建">
+                <i class="fa fa-chevron-left"></i> 环境搭建
               </a>
             
           </div>
@@ -497,8 +496,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/14/tt/" rel="prev" title="tt">
-                tt <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/14/mysql语句/" rel="prev" title="mysql语句">
+                mysql语句 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -570,7 +569,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -651,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#windows使用linux"><span class="nav-text">windows使用linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vmware安装ubuntu-server之后提示："><span class="nav-text">vmware安装ubuntu server之后提示：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机共享文件夹"><span class="nav-text">虚拟机共享文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xshell-远程登录-输入：ip-账号-密码登录"><span class="nav-text">xshell 远程登录 输入：ip 账号 密码登录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql数据库"><span class="nav-text">mysql数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载mariadb"><span class="nav-text">卸载mariadb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载mysql"><span class="nav-text">卸载mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Centos7安装mariadb，支持远程访问"><span class="nav-text">Centos7安装mariadb，支持远程访问</span></a></li></ol></li></ol></div>
             
 
           </div>
