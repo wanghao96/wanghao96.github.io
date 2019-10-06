@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="1https://blog.csdn.net/ly021499/article/details/88026694  1.使用mysql1234567891011USE db_name;  --打开数据库SHOW DATABASES; --显示数据库列表SHOW TABLES;    --获取数据库内的表的列表SHOW COLUMNS FROM tbl_name; --显示表的列信息DESCRIBE">
+  <meta name="description" content="1.使用mysql数据定义语言（Data Define Language）数据操作语言（Data Manipulation Language）数据控制语言（Data Control Language） 1234567891011USE db_name;  --打开数据库SHOW DATABASES; --显示数据库列表SHOW TABLES;    --获取数据库内的表的列表SHOW COLUMN">
 <meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql语句">
 <meta property="og:url" content="http://yoursite.com/2019/09/14/mysql语句/index.html">
 <meta property="og:site_name" content="WangHao_Blog">
-<meta property="og:description" content="1https://blog.csdn.net/ly021499/article/details/88026694  1.使用mysql1234567891011USE db_name;  --打开数据库SHOW DATABASES; --显示数据库列表SHOW TABLES;    --获取数据库内的表的列表SHOW COLUMNS FROM tbl_name; --显示表的列信息DESCRIBE">
+<meta property="og:description" content="1.使用mysql数据定义语言（Data Define Language）数据操作语言（Data Manipulation Language）数据控制语言（Data Control Language） 1234567891011USE db_name;  --打开数据库SHOW DATABASES; --显示数据库列表SHOW TABLES;    --获取数据库内的表的列表SHOW COLUMN">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-01T12:40:21.009Z">
+<meta property="og:updated_time" content="2019-10-06T11:34:39.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql语句">
-<meta name="twitter:description" content="1https://blog.csdn.net/ly021499/article/details/88026694  1.使用mysql1234567891011USE db_name;  --打开数据库SHOW DATABASES; --显示数据库列表SHOW TABLES;    --获取数据库内的表的列表SHOW COLUMNS FROM tbl_name; --显示表的列信息DESCRIBE">
+<meta name="twitter:description" content="1.使用mysql数据定义语言（Data Define Language）数据操作语言（Data Manipulation Language）数据控制语言（Data Control Language） 1234567891011USE db_name;  --打开数据库SHOW DATABASES; --显示数据库列表SHOW TABLES;    --获取数据库内的表的列表SHOW COLUMN">
 
 
 
@@ -413,7 +413,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-01 20:40:21" itemprop="dateModified" datetime="2019-10-01T20:40:21+08:00">2019-10-01</time>
+                <time title="修改时间：2019-10-06 19:34:39" itemprop="dateModified" datetime="2019-10-06T19:34:39+08:00">2019-10-06</time>
               
             
           </span>
@@ -447,67 +447,126 @@
       
 
       
-        <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/ly021499/</span>article<span class="regexp">/details/</span><span class="number">88026694</span></span><br></pre></td></tr></table></figure>
+        <h2 id="1-使用mysql"><a href="#1-使用mysql" class="headerlink" title="1.使用mysql"></a>1.使用mysql</h2><p>数据定义语言（Data Define Language）<br>数据操作语言（Data Manipulation Language）<br>数据控制语言（Data Control Language）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> db_name;  <span class="comment">--打开数据库</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">DATABASES</span>; <span class="comment">--显示数据库列表</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">TABLES</span>;    <span class="comment">--获取数据库内的表的列表</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">COLUMNS</span> <span class="keyword">FROM</span> tbl_name; <span class="comment">--显示表的列信息</span></span><br><span class="line"><span class="keyword">DESCRIBE</span> tbl_name;  <span class="comment">--显示表的列信息（快捷）</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">STATUS</span>;       <span class="comment">--用于显示广泛的服务器状态信息；</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">DATABASE</span>; 和 <span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span>; ，分别用来显示创建特定数据库或表的MySQL语句</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">GRANTS</span>; 用来显示授予用户（所有用户或特定用户）的安全权限</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">ERRORS</span>; 和 <span class="keyword">SHOW</span> <span class="keyword">WARNINGS</span>; ，用来显示服务器错误或警告消息</span><br><span class="line"><span class="keyword">HELP</span> <span class="keyword">SHOW</span>; 显示允许的<span class="keyword">SHOW</span>语句</span><br></pre></td></tr></table></figure>
 
-<h2 id="1-使用mysql"><a href="#1-使用mysql" class="headerlink" title="1.使用mysql"></a>1.使用mysql</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> db_name;  <span class="comment">--打开数据库</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">DATABASES</span>; <span class="comment">--显示数据库列表</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">TABLES</span>;    <span class="comment">--获取数据库内的表的列表</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">COLUMNS</span> <span class="keyword">FROM</span> tbl_name; <span class="comment">--显示表的列信息</span></span><br><span class="line"><span class="keyword">DESCRIBE</span> tbl_name;  <span class="comment">--显示表的列信息（快捷）</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">STATUS</span>;       <span class="comment">--用于显示广泛的服务器状态信息；</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">DATABASE</span>; 和 <span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span>; ，分别用来显示创建特定数据库或表的MySQL语句</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">GRANTS</span>; 用来显示授予用户（所有用户或特定用户）的安全权限</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">ERRORS</span>; 和 <span class="keyword">SHOW</span> <span class="keyword">WARNINGS</span>; ，用来显示服务器错误或警告消息</span><br><span class="line"><span class="keyword">HELP</span> <span class="keyword">SHOW</span>; 显示允许的<span class="keyword">SHOW</span>语句</span><br></pre></td></tr></table></figure>
+<h2 id="2-表的创建、删除与更新"><a href="#2-表的创建、删除与更新" class="headerlink" title="2.表的创建、删除与更新"></a>2.表的创建、删除与更新</h2><p>表的创建</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE <span class="keyword">TABLE</span> 表名</span><br><span class="line">(列名 数据类型 完整性约束);</span><br></pre></td></tr></table></figure>
 
-<p>数据定义语言（Data Define Language）<br>数据操作语言（Data Manipulation Language）<br>数据控制语言（Data Control Language）</p>
-<p>表的创建<br>CREATE TABLE 表名<br>(列名 数据类型 完整性约束);</p>
-<h2 id="2-查select"><a href="#2-查select" class="headerlink" title="2.查select"></a>2.查select</h2><p>查询标准语句格式：<br>SELECT &lt;列名&gt; FROM &lt;表名&gt;;<br>查询所有列：* 代表 所有<br>SELECT * FROM &lt;表名&gt;;</p>
-<p>为列设定别名：AS（设定汉语别名时需要必须用双引号（”）括起来）<br>SELECT product_id AS id, product_name AS name FROM product;</p>
-<p>从结果中去掉重复行：DISTINCT （关键字只能用在第一个列名之前）<br>SELECT DISTINCT product_type AS p_type, product_name FROM product;</p>
-<p>聚合函数中使用DISTINCT<br>SELECT COUNT(DISTINCT product_type) FROM Product;</p>
-<p>常数 的查询：（ NULL 也被视为一类数据）<br>表达式：SELECT &lt;常数值&gt; AS &lt;显示字段名&gt; FROM product;<br>SELECT ‘ 商品 ‘ AS string, 38 AS number, ‘2009-02-24’ AS date,<br>product_id, product_name<br>FROM product;</p>
-<p>根据 WHERE 语句来选择记录：<br>SELECT &lt;列名&gt; FROM &lt;表名&gt; WHERE &lt;条件&gt;</p>
-<p>注释 的书写方法:<br>1行注释<br>书写在“–”之后，只能写在同一行。<br>多行注释<br>书写在“/<em>”和“</em>/”之间，可以跨多行。</p>
-<p>算数运算符</p>
-<ul>
-<li><ul>
-<li><ul>
-<li>/（加减乘除）<br>注意：所有包含 NULL 的计算，结果肯定是 NULL<br>SQL语句中也可以使用运算表达式：<br>SELECT product_name, sale_price, sale_price * 2 AS “sale_price_x2” FROM Product;</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>比较运算符（使用比较运算符时一定要注意不等号和等号的位置。）<br>=  相等     &lt;&gt; 不等于</p>
-<blockquote>
-<p>= 大于等于 &lt;= 小于等于<br> 大于     &lt;  小于<br>字符串类型的数据原则上按照字典顺序进行排序，不能与数字的大小顺序混淆。</p>
-</blockquote>
-<p>逻辑运算符<br>NOT 、 AND  、OR<br>多个查询条件 进行组合时，需要使用 AND 运算符或者 OR 运算符。<br>AND 运算符的优先级高于 OR 运算符。想要优先执行 OR 运算符时可以使用括号。</p>
-<p>GROUP BY：（对表进行分组）<br>使用聚合函数和 GROUP BY 子句时需要注意以下4点。<br>① 只能写在 SELECT 子句之中<br>② GROUP BY 子句中不能使用 SELECT 子句中列的 别名<br>③ GROUP BY 子句的聚合结果是 无序 的<br>④ WHERE 子句中不能使用聚合函数（SELECT子句和HAVING子句以及ORDER BY子句可以）</p>
+<p>删除、更新表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> 表名; <span class="comment">-- 删除表</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">ADD</span> 列名 数据类型;       <span class="comment">-- 增加列名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">DROP</span>列名;       <span class="comment">-- 删除列名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">MODIFY</span> 旧列名 数据类型; <span class="comment">-- 修改列名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">CHANGE</span> 新列名 数据类型; <span class="comment">-- 修改列名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">ALTER</span> 列名 <span class="keyword">DROP</span> <span class="keyword">DEFAULT</span>;    <span class="comment">-- 删除默认</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">RENAME</span> <span class="keyword">TO</span> 新表名;     <span class="comment">-- 修改表名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">MODIFY</span> 列名 数据类型 <span class="keyword">COMMENT</span> <span class="string">''</span>；  <span class="comment">--添加备注</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tbl_name <span class="keyword">ADD</span> PRIMARY <span class="keyword">KEY</span> (column_list): 该语句添加一个主键，这意味着索引值必须是唯一的，且不能为<span class="literal">NULL</span>。</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tbl_name <span class="keyword">ADD</span> <span class="keyword">UNIQUE</span> index_name (column_list): 这条语句创建索引的值必须是唯一的（除了<span class="literal">NULL</span>外，<span class="literal">NULL</span>可能会出现多次）。</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tbl_name <span class="keyword">ADD</span> <span class="keyword">INDEX</span> index_name (column_list): 添加普通索引，索引值可出现多次。</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tbl_name <span class="keyword">ADD</span> FULLTEXT index_name (column_list):该语句指定了索引为 FULLTEXT ，用于全文索引。</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-数据的插入"><a href="#3-数据的插入" class="headerlink" title="3.数据的插入"></a>3.数据的插入</h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INSERT语句</span><br><span class="line"></span><br><span class="line">INSERT INTO &lt;表名&gt; ( 列<span class="number">1</span> ,列<span class="number">2</span> , 列<span class="number">3</span> , …… )  VALUES ( 值<span class="number">1</span> , 值<span class="number">2</span> , 值<span class="number">3</span> , …… );</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-数据的删除"><a href="#4-数据的删除" class="headerlink" title="4.数据的删除"></a>4.数据的删除</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">保留数据表，仅删除全部数据行的 <span class="keyword">DELETE</span> 语句</span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> &lt; 表名 &gt;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">TRUNCATE</span> &lt; 表名 &gt;;</span><br><span class="line"></span><br><span class="line">删除部分数据行的搜索型 <span class="keyword">DELETE</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> &lt; 表名 &gt; <span class="keyword">WHERE</span> &lt; 条件 &gt;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-数据的更新"><a href="#5-数据的更新" class="headerlink" title="5.数据的更新"></a>5.数据的更新</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">改变表中数据的 <span class="keyword">UPDATE</span> 语句</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> &lt; 表名 &gt; <span class="keyword">SET</span> &lt; 列名 &gt; = &lt; 表达式 &gt; <span class="keyword">WHERE</span> &lt; 条件 &gt;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-数据查询"><a href="#6-数据查询" class="headerlink" title="6.数据查询"></a>6.数据查询</h2><h3 id="常见select"><a href="#常见select" class="headerlink" title="常见select"></a>常见select</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">查询标准语句格式：</span><br><span class="line"><span class="keyword">SELECT</span> &lt;列名&gt; <span class="keyword">FROM</span> &lt;表名&gt;;</span><br><span class="line">查询所有列：* 代表 所有</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> &lt;表名&gt;;</span><br><span class="line"></span><br><span class="line">为列设定别名：AS（设定汉语别名时需要必须用双引号（"）括起来）</span><br><span class="line"><span class="keyword">SELECT</span> product_id <span class="keyword">AS</span> id, product_name <span class="keyword">AS</span> name <span class="keyword">FROM</span> product;</span><br><span class="line"></span><br><span class="line">从结果中去掉重复行：DISTINCT （关键字只能用在第一个列名之前）</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> product_type <span class="keyword">AS</span> p_type, product_name <span class="keyword">FROM</span> product;</span><br><span class="line"></span><br><span class="line">聚合函数中使用DISTINCT</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> product_type) <span class="keyword">FROM</span> Product;</span><br><span class="line"></span><br><span class="line">常数 的查询：（ NULL 也被视为一类数据）</span><br><span class="line">表达式：<span class="keyword">SELECT</span> &lt;常数值&gt; <span class="keyword">AS</span> &lt;显示字段名&gt; <span class="keyword">FROM</span> product;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">' 商品 '</span> <span class="keyword">AS</span> <span class="keyword">string</span>, <span class="number">38</span> <span class="keyword">AS</span> <span class="keyword">number</span>, <span class="string">'2009-02-24'</span> <span class="keyword">AS</span> date,</span><br><span class="line">product_id, product_name</span><br><span class="line"><span class="keyword">FROM</span> product;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">根据 WHERE 语句来选择记录：</span><br><span class="line"><span class="keyword">SELECT</span> &lt;列名&gt; <span class="keyword">FROM</span> &lt;表名&gt; <span class="keyword">WHERE</span> &lt;条件&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="注释-的书写方法"><a href="#注释-的书写方法" class="headerlink" title="注释 的书写方法:"></a>注释 的书写方法:</h3><p>1行注释<br>书写在“–”之后，只能写在同一行。<br>多行注释<br>书写在“/<em>”和“</em>/”之间，可以跨多行。</p>
+<h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><p>+   -   *   /（加减乘除）<br>注意：所有包含 NULL 的计算，结果肯定是 NULL<br>SQL语句中也可以使用运算表达式：<br>SELECT product_name, sale_price, sale_price * 2 AS “sale_price_x2” FROM Product;</p>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>（使用比较运算符时一定要注意不等号和等号的位置。）<br>=  相等     &lt;&gt; 不等于<br>&gt;= 大于等于 &lt;= 小于等于<br>&gt;  大于     &lt;  小于<br>字符串类型的数据原则上按照字典顺序进行排序，不能与数字的大小顺序混淆。</p>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>NOT 、 AND  、OR<br>多个查询条件 进行组合时，需要使用 AND 运算符或者 OR 运算符。<br>AND 运算符的优先级高于 OR 运算符。想要优先执行 OR 运算符时可以使用括号。</p>
+<h3 id="GROUP-BY："><a href="#GROUP-BY：" class="headerlink" title="GROUP BY："></a>GROUP BY：</h3><p>（对表进行分组）<br>使用聚合函数和 GROUP BY 子句时需要注意以下4点。<br>① 只能写在 SELECT 子句之中<br>② GROUP BY 子句中不能使用 SELECT 子句中列的 别名<br>③ GROUP BY 子句的聚合结果是 无序 的<br>④ WHERE 子句中不能使用聚合函数（SELECT子句和HAVING子句以及ORDER BY子句可以）</p>
 <p>当聚合键中包含 NULL 时，也会将NULL 作为一组特定的数据</p>
 <p>GROUP BY 和 WHERE 并用时 SELECT 语句的执行顺序<br>FROM →  WHERE →  GROUP BY →  SELECT<br>GROUP BY表达式<br>SELECT &lt; 列名 1&gt;, &lt; 列名2&gt;, &lt; 列名3&gt;,  ……<br>FROM &lt; 表名 &gt;<br>WHERE &lt;条件&gt;<br>GROUP BY &lt;列名 1&gt;, &lt; 列名2&gt;, &lt; 列名3&gt;,  ……;</p>
-<p>HAVING子句 （HAVING 子句必须写在 GROUP BY 子句之后）<br>WHERE 子句 = 指定 行 所对应的条件<br>HAVING 子句 = 指定 组 所对应的条件<br>SELECT &lt; 列名 1&gt;, &lt; 列名 2&gt;, &lt; 列名 3&gt;,  ……<br>FROM &lt; 表名 &gt;<br>GROUP BY &lt; 列名 1&gt;, &lt; 列名 2&gt;, &lt; 列名 3&gt;,  ……<br>HAVING &lt; 分组结果对应的条件 &gt;<br>例子：<br>SELECT product_type, AVG(sale_price)<br>FROM Product<br>GROUP BY product_type<br>HAVING AVG(sale_price) &gt;= 2500;</p>
-<p>ORDER BY 子句（默认升序，DESC降序，ASC升序）（可以使用 SELECT 子句中定义别名）<br>SELECT &lt; 列名 1&gt;, &lt; 列名 2&gt;, &lt; 列名 3&gt;,  ……<br>FROM &lt; 表名 &gt;<br>ORDER BY &lt; 排序基准列 1&gt;, &lt; 排序基准列 2&gt;,  ……<br>子句的书写顺序</p>
+<h3 id="HAVING子句"><a href="#HAVING子句" class="headerlink" title="HAVING子句"></a>HAVING子句</h3><p>（HAVING 子句必须写在 GROUP BY 子句之后）<br>WHERE 子句 = 指定 行 所对应的条件<br>HAVING 子句 = 指定 组 所对应的条件<br>SELECT &lt; 列名 1&gt;, &lt; 列名 2&gt;, &lt; 列名 3&gt;,  ……<br>FROM &lt; 表名 &gt;<br>GROUP BY &lt; 列名 1&gt;, &lt; 列名 2&gt;, &lt; 列名 3&gt;,  ……<br>HAVING &lt; 分组结果对应的条件 &gt;<br>例子：<br>SELECT product_type, AVG(sale_price)<br>FROM Product<br>GROUP BY product_type<br>HAVING AVG(sale_price) &gt;= 2500;</p>
+<h4 id="ORDER-BY-子句"><a href="#ORDER-BY-子句" class="headerlink" title="ORDER BY 子句"></a>ORDER BY 子句</h4><p>（默认升序，DESC降序，ASC升序）（可以使用 SELECT 子句中定义别名）<br>SELECT &lt; 列名 1&gt;, &lt; 列名 2&gt;, &lt; 列名 3&gt;,  ……<br>FROM &lt; 表名 &gt;<br>ORDER BY &lt; 排序基准列 1&gt;, &lt; 排序基准列 2&gt;,  ……<br>子句的书写顺序</p>
 <ol>
 <li>SELECT 子句 → 2.  FROM 子句 → 3.  WHERE 子句 → 4.  GROUP BY 子句 →</li>
 <li>HAVING 子句 → 6.  ORDER BY 子句<br>LIMIT 1,3</li>
 </ol>
-<h2 id="3-函数"><a href="#3-函数" class="headerlink" title="3.函数"></a>3.函数</h2><p>函数大致可以分为以下几种：</p>
-<p>● 聚合函数（用来进行数据聚合的函数）<br>COUNT ： 计算表中的记录数（行数）<br>SELECT COUNT(列名) FROM Product;  （下列函数表达式相同）<br>SUM ： 计算表中数值列中数据的合计值<br>AVG ： 计算表中数值列中数据的平均值<br>MAX ： 求出表中任意列中数据的最大值<br>MIN ： 求出表中任意列中数据的最小值</p>
-<p>● 算术函数（用来进行数值计算的函数）<br>ABS 绝对值函数:ABS( 数值 )<br>SELECT m, ABS(m) AS abs_col FROM SampleMath;<br>MOD 求余函数:MOD( 被除数，除数 )<br>ROUND 四舍五入函数:ROUND( 对象数值，保留小数的位数 )</p>
-<p>● 字符串函数（用来进行字符串操作的函数）<br>|| 拼接字符串函数:字符串 1 || 字符串 2<br>(MYSQL中使用:CONCAT(str1, str2))<br>LENGTH 字符串长度函数:LENGTH(str)<br>MySQL 中的LENGTH 这样以字节为单位的函数进行计算时</p>
-<p>● 日期函数（用来进行日期操作的函数）<br>CURRENT_DATE 当前日期函数：CURRENT_DATE<br>SELECT CURRENT_DATE;<br>CURRENT_TIME 当前时间函数：CURRENT_TIME<br>EXTRACT 当前日期和时间函数：EXTRACT( 日期元素 FROM  日期 )</p>
-<p>● 转换函数（用来转换数据类型和值的函数）<br>LOWER小写转换函数：LOWER( 字符串 )<br>REPLACE 字符串的替换函数：REPLACE( 对象字符串，替换前的字符串，替换后的字符串 )<br>SUBSTRING 字符串的截取函数：SUBSTRING （对象字符串 FROM  截取的起始位置 FOR  截取的字符数）<br>UPPER 大写转换函数：UPPER( 字符串 )<br>CAST 类型转换函数：CAST （转换前的值 AS  想要转换的数据类型）<br>COALESCE 将 NULL 转换为其他值函数：COALESCE( 数据 1 ，数据 2 ，数据 3 …… )</p>
-<h2 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h2><p>谓词<br>谓词包括以下：<br>● LIKE  （模糊匹配）<br>SELECT * FROM product LIKE ‘%s’;  （后面匹配）s%’ （前面匹配） ‘%s%’（中间匹配）<br>‘<em>s</em>’ （三位且中间是s的） ‘_s’ （两位且结尾是s的） ‘s_’ （两位且开头是s的）<br>● BETWEEN  （范围查询）<br>SELECT * FROM product WHERE sale_price BETWEEN 100 AND 1000;<br>● IS NULL 、 IS NOT NULL  （判断是否为 NULL）<br>SELECT product_name, purchase_price FROM Product WHERE purchase_price IS NULL;<br>● IN 、 NOT IN（ OR 的简便用法）<br>SELECT product_name, purchase_price FROM Product WHERE purchase_price IN (320, 500, 5000);<br>● EXISTS</p>
-<p>CASE表达式<br>– 不写默认为NULL，尽量写上<br>–  END不能省略<br>SELECT product_name,<br>CASE WHEN product_type = ‘ 衣服 ‘<br>THEN ‘A ： ‘  | | product_type<br>WHEN product_type = ‘ 办公用品 ‘<br>THEN ‘B ： ‘  | | product_type<br>WHEN product_type = ‘ 厨房用具 ‘<br>THEN ‘C ： ‘  | | product_type<br>ELSE NULL<br>END AS abc_product_type<br>FROM Product;</p>
+<h2 id="7-函数"><a href="#7-函数" class="headerlink" title="7.函数"></a>7.函数</h2><p>函数大致可以分为以下几种：</p>
+<ul>
+<li><p>聚合函数（用来进行数据聚合的函数）<br>COUNT ： 计算表中的记录数（行数）<br>SELECT COUNT(列名) FROM Product;  （下列函数表达式相同）<br>SUM ： 计算表中数值列中数据的合计值<br>AVG ： 计算表中数值列中数据的平均值<br>MAX ： 求出表中任意列中数据的最大值<br>MIN ： 求出表中任意列中数据的最小值</p>
+</li>
+<li><p>算术函数（用来进行数值计算的函数）<br>ABS 绝对值函数:ABS( 数值 )<br>SELECT m, ABS(m) AS abs_col FROM SampleMath;<br>MOD 求余函数:MOD( 被除数，除数 )<br>ROUND 四舍五入函数:ROUND( 对象数值，保留小数的位数 )</p>
+</li>
+<li><p>字符串函数（用来进行字符串操作的函数）<br>|| 拼接字符串函数:字符串 1 || 字符串 2<br>(MYSQL中使用:CONCAT(str1, str2))<br>LENGTH 字符串长度函数:LENGTH(str)<br>MySQL 中的LENGTH 这样以字节为单位的函数进行计算时</p>
+</li>
+<li><p>日期函数（用来进行日期操作的函数）<br>CURRENT_DATE 当前日期函数：CURRENT_DATE<br>SELECT CURRENT_DATE;<br>CURRENT_TIME 当前时间函数：CURRENT_TIME<br>EXTRACT 当前日期和时间函数：EXTRACT( 日期元素 FROM  日期 )</p>
+</li>
+<li><p>转换函数（用来转换数据类型和值的函数）<br>LOWER小写转换函数：LOWER( 字符串 )<br>REPLACE 字符串的替换函数：REPLACE( 对象字符串，替换前的字符串，替换后的字符串 )<br>SUBSTRING 字符串的截取函数：SUBSTRING （对象字符串 FROM  截取的起始位置 FOR  截取的字符数）<br>UPPER 大写转换函数：UPPER( 字符串 )<br>CAST 类型转换函数：CAST （转换前的值 AS  想要转换的数据类型）<br>COALESCE 将 NULL 转换为其他值函数：COALESCE( 数据 1 ，数据 2 ，数据 3 …… )</p>
+</li>
+</ul>
+<h2 id="8-谓词"><a href="#8-谓词" class="headerlink" title="8.谓词"></a>8.谓词</h2><p>谓词包括以下：</p>
+<ul>
+<li>LIKE  （模糊匹配）<br>SELECT * FROM product LIKE ‘%s’;  （后面匹配）s%’ （前面匹配） ‘%s%’（中间匹配）<br>‘<em>s</em>’ （三位且中间是s的） ‘_s’ （两位且结尾是s的） ‘s_’ （两位且开头是s的）</li>
+<li>BETWEEN  （范围查询）<br>SELECT * FROM product WHERE sale_price BETWEEN 100 AND 1000;</li>
+<li>IS NULL 、 IS NOT NULL  （判断是否为 NULL）<br>SELECT product_name, purchase_price FROM Product WHERE purchase_price IS NULL;</li>
+<li>IN 、 NOT IN（ OR 的简便用法）<br>SELECT product_name, purchase_price FROM Product WHERE purchase_price IN (320, 500, 5000);</li>
+<li>EXISTS</li>
+</ul>
+<h2 id="9-CASE表达式"><a href="#9-CASE表达式" class="headerlink" title="9.CASE表达式"></a>9.CASE表达式</h2><p>– 不写默认为NULL，尽量写上<br>–  END不能省略<br>SELECT product_name,<br>CASE WHEN product_type = ‘ 衣服 ‘<br>THEN ‘A ： ‘  | | product_type<br>WHEN product_type = ‘ 办公用品 ‘<br>THEN ‘B ： ‘  | | product_type<br>WHEN product_type = ‘ 厨房用具 ‘<br>THEN ‘C ： ‘  | | product_type<br>ELSE NULL<br>END AS abc_product_type<br>FROM Product;</p>
 <p>例子：<br>SELECT SUM(CASE WHEN product_type = ‘ 衣服 ‘<br>THEN sale_price ELSE 0 END) AS sum_price_clothes,<br>SUM(CASE WHEN product_type = ‘ 厨房用具 ‘<br>THEN sale_price ELSE 0 END) AS sum_price_kitchen,<br>SUM(CASE WHEN product_type = ‘ 办公用品 ‘<br>THEN sale_price ELSE 0 END) AS sum_price_office<br>FROM Product;</p>
-<p>集合运算<br>表的加法—— UNION（并集）<br>SELECT product_id, product_name, sale_price FROM Product<br>UNION<br>SELECT product_id, product_name, sale_price FROM Product2<br>ORDER BY sale_price;<br>注意事项① —— 作为运算对象的记录的列数必须相同<br>注意事项② —— 作为运算对象的记录中列的类型必须一致<br>注意事项③ —— 可以使用任何 SELECT 语句，但 ORDER BY 子句只能在最后使用一次</p>
+<h2 id="10-集合运算"><a href="#10-集合运算" class="headerlink" title="10.集合运算"></a>10.集合运算</h2><p>表的加法—— UNION（并集）<br>SELECT product_id, product_name, sale_price FROM Product<br>UNION<br>SELECT product_id, product_name, sale_price FROM Product2<br>ORDER BY sale_price;<br>注意事项① —— 作为运算对象的记录的列数必须相同<br>注意事项② —— 作为运算对象的记录中列的类型必须一致<br>注意事项③ —— 可以使用任何 SELECT 语句，但 ORDER BY 子句只能在最后使用一次</p>
 <p>选取表中公共部分—— INTERSECT（交集）<br>SELECT product_id, product_name, sale_price FROM Product<br>INTERSECT<br>SELECT product_id, product_name, sale_price FROM Product2<br>ORDER BY sale_price;</p>
-<p>包含重复行的集合运算—— ALL 选项</p>
-<p>SELECT product_id, product_name FROM Product</p>
-<p>UNION ALL</p>
-<p>SELECT product_id, product_name FROM Product2;</p>
-<p>记录的减法—— EXCEPT</p>
-<p>SELECT product_id, product_name FROM Product</p>
-<p>EXCEPT</p>
-<p>SELECT product_id, product_name FROM Product2</p>
-<p>ORDER BY product_id;</p>
-<p>联结</p>
-<p>联结（ JOIN ）就是将其他表中的列添加过来，进行“添加列”的集合运算。</p>
-<p>UNION 是以行（纵向）为单位进行操作，而联结则是以列（横向）为单位</p>
-<p>进行的。</p>
+<p>包含重复行的集合运算—— ALL 选项<br>SELECT product_id, product_name FROM Product<br>UNION ALL<br>SELECT product_id, product_name FROM Product2;</p>
+<p>记录的减法—— EXCEPT<br>SELECT product_id, product_name FROM Product<br>EXCEPT<br>SELECT product_id, product_name FROM Product2<br>ORDER BY product_id;</p>
+<h2 id="11-联结"><a href="#11-联结" class="headerlink" title="11.联结"></a>11.联结</h2><p>联结（ JOIN ）就是将其他表中的列添加过来，进行“添加列”的集合运算。<br>UNION 是以行（纵向）为单位进行操作，而联结则是以列（横向）为单位进行的。</p>
+<p>将两张表进行内联结<br>SELECT SP.shop_id, SP.shop_name, SP.product_id, P.product_name, P.sale_price<br>FROM ShopProduct AS SP<br>JOIN Product AS P ON SP.product_id = P.product_id;</p>
+<ul>
+<li>内联结要点① —— FROM 子句<br>第一点要注意的是，之前的 FROM 子句中只有一张表，而这次我们同时使用了 ShopProduct 和 Product 两张表。<br>FROM ShopProduct AS SP INNER JOIN Product AS P<br>使用关键字 INNER JOIN 就可以将两张表联结在一起了。 SP 和 P<br>分别是这两张表的别名，但别名并不是必需的。在 SELECT 子句中直接使用 ShopProduct 和 product _ id 这样的表的原名也没有关系，但由于表名太长会影响 SQL 语句的可读性，因此还是希望大家能够习惯使用别名。</li>
+<li>内联结要点② ——  ON 子句<br>第二点要注意的是 ON 后面的联结条件。<br>进行内联结时必须使用 ON 子句，并且要书写在 FROM 和 WHERE 之间。</li>
+<li>内联结要点③ —— SELECT 子句<br>第三点要注意的是，在 SELECT 子句中指定的列。<br>使用联结时 SELECT 子句中的列需要按照“ &lt; 表的别名 &gt; . &lt; 列名 &gt; ”的格式进行书写。</li>
+</ul>
+<p>外联结 —— OUTER JOIN<br>SELECT SP.shop_id, SP.shop_name, SP.product_id, P.product_name, P.sale_price<br>FROM ShopProduct AS SP RIGHT OUTER JOIN Product AS P<br>ON SP.product_id = P.product_id;<br>外联结中使用 LEFT 、 RIGHT 来指定主表。使用二者所得到的结果完全相同。</p>
+<p>交叉联结 —— CROSS JOIN<br>SELECT SP.shop_id, SP.shop_name, SP.product_id, P.product_name<br>FROM ShopProduct AS SP CROSS JOIN Product AS P;</p>
+<h2 id="12-事务"><a href="#12-事务" class="headerlink" title="12.事务"></a>12.事务</h2><p>事务就是需要在同一个处理单元中执行的一系列更新处理的集合<br>事务是必须满足4个条件（ACID）：：原子性（Atomicity，或称不可分割性）、一致性（Consistency）、隔离性（Isolation，又称独立性）、持久性（Durability）。</p>
+<h3 id="要点："><a href="#要点：" class="headerlink" title="要点："></a>要点：</h3><p>1.在 MySQL 中只有使用了 Innodb 数据库引擎的数据库或表才支持事务。<br>2.事务处理可以用来维护数据库的完整性，保证SQL语句要么全部执行，要么全部不执行。<br>3.事务用来管理 insert,update,delete 语句</p>
+<h3 id="事务控制语句："><a href="#事务控制语句：" class="headerlink" title="事务控制语句："></a>事务控制语句：</h3><p>BEGIN或START TRANSACTION；显式地开启一个事务；</p>
+<p>COMMIT；也可以使用COMMIT WORK，不过二者是等价的。COMMIT会提交事务，并使已对数据库进行的所有修改成为永久性的；</p>
+<p>ROLLBACK；有可以使用ROLLBACK WORK，不过二者是等价的。回滚会结束用户的事务，并撤销正在进行的所有未提交的修改；</p>
+<p>SAVEPOINT identifier；SAVEPOINT允许在事务中创建一个保存点，一个事务中可以有多个SAVEPOINT；</p>
+<p>RELEASE SAVEPOINT identifier；删除一个事务的保存点，当没有指定的保存点时，执行该语句会抛出一个异常；</p>
+<p>ROLLBACK TO identifier；把事务回滚到标记点；</p>
+<p>SET TRANSACTION；用来设置事务的隔离级别。InnoDB存储引擎提供事务的隔离级别有READ UNCOMMITTED、READ COMMITTED、REPEATABLE READ和SERIALIZABLE。</p>
+<h3 id="MYSQL-事务处理-主要有两种方法："><a href="#MYSQL-事务处理-主要有两种方法：" class="headerlink" title="MYSQL 事务处理 主要有两种方法："></a>MYSQL 事务处理 主要有两种方法：</h3><p>1、用 BEGIN, ROLLBACK, COMMIT来实现</p>
+<p>BEGIN 开始一个事务</p>
+<p>ROLLBACK 事务回滚</p>
+<p>COMMIT 事务确认</p>
+<p>2、直接用 SET 来改变 MySQL 的自动提交模式:</p>
+<p>SET AUTOCOMMIT=0 禁止自动提交</p>
+<p>SET AUTOCOMMIT=1 开启自动提交</p>
+<p>MYSQL事务</p>
+<p>BEGIN;</p>
+<p>UPDATE sc SET Grade = 81 WHERE Grade = 80;</p>
+<p>DELETE FROM student WHERE Sname = ‘陈冬’;</p>
+<p>INSERT INTO student VALUE(9521105, ‘陈冬’, ‘男’, 19, ‘数学系’);</p>
+<p>UPDATE student SET Sage = 20 WHERE Sname = ‘陈冬’;</p>
+<p>COMMIT;</p>
+<p>复杂查询</p>
+<h2 id="13-视图（将经常使用的-SELECT-语句做成视图。）"><a href="#13-视图（将经常使用的-SELECT-语句做成视图。）" class="headerlink" title="13.视图（将经常使用的 SELECT 语句做成视图。）"></a>13.视图（将经常使用的 SELECT 语句做成视图。）</h2><p>创建视图的 CREATE VIEW 语句</p>
+<p>CREATE VIEW  视图名称 (&lt; 视图列名 1&gt;, &lt; 视图列名 2&gt;,  …… )</p>
+<p>AS</p>
+<p>&lt;SELECT 语句 &gt;</p>
+<p>删除视图</p>
+<p>DROP VIEW 视图名称</p>
+<p>例子：</p>
+<p>CREATE VIEW ProductSum (product_type, cnt_product)</p>
+<p>AS</p>
+<p>SELECT product_type, COUNT(*)</p>
+<p>FROM Product</p>
+<p>GROUP BY product_type;</p>
+<h2 id="14-子查询"><a href="#14-子查询" class="headerlink" title="14.子查询"></a>14.子查询</h2><p>子查询作为内层查询会首先执行。</p>
+<p>SELECT product_type, cnt_product</p>
+<p>FROM ( SELECT product_type, COUNT(*) AS cnt_product</p>
+<p>FROM Product GROUP BY product_type )     – 先执行FROM子句中的SELECT子句</p>
+<p>AS ProductSum;</p>
+<p>标量子查询 就是返回 单一值 的子查询，绝对不能返回 多行 结果。</p>
+<p>能够使用常数或者列名的地方，无论是 SELECT 子句、 GROUP BY 子句、 HAVING 子句，还是ORDER BY 子句，只要使用 单一值 的几乎所有的地方都可以使用。</p>
+<p>SELECT product_id, product_name, sale_price,</p>
+<p>(SELECT AVG(sale_price) FROM Product)          – 标量子查询作为列名</p>
+<p>AS avg_price</p>
+<p>FROM Product;</p>
+<p>关联子查询 在细分的 组内 进行比较时，需要使用关联子查询。</p>
+<p>SELECT product _type , product_name, sale_price</p>
+<p>FROM Product AS P1  </p>
+<p>WHERE sale_price &gt; (SELECT AVG(sale_price)</p>
+<p>FROM Product AS P2  </p>
+<p>WHERE P1.product_type = P2.product_type – 关联点</p>
+<p>GROUP BY product_type);</p>
 
       
     </div>
@@ -710,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-使用mysql"><span class="nav-text">1.使用mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-查select"><span class="nav-text">2.查select</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-函数"><span class="nav-text">3.函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4"><span class="nav-text">4.</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-使用mysql"><span class="nav-text">1.使用mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-表的创建、删除与更新"><span class="nav-text">2.表的创建、删除与更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-数据的插入"><span class="nav-text">3.数据的插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-数据的删除"><span class="nav-text">4.数据的删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-数据的更新"><span class="nav-text">5.数据的更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-数据查询"><span class="nav-text">6.数据查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见select"><span class="nav-text">常见select</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释-的书写方法"><span class="nav-text">注释 的书写方法:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算数运算符"><span class="nav-text">算数运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较运算符"><span class="nav-text">比较运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符"><span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GROUP-BY："><span class="nav-text">GROUP BY：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HAVING子句"><span class="nav-text">HAVING子句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ORDER-BY-子句"><span class="nav-text">ORDER BY 子句</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-函数"><span class="nav-text">7.函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-谓词"><span class="nav-text">8.谓词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-CASE表达式"><span class="nav-text">9.CASE表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-集合运算"><span class="nav-text">10.集合运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-联结"><span class="nav-text">11.联结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-事务"><span class="nav-text">12.事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要点："><span class="nav-text">要点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务控制语句："><span class="nav-text">事务控制语句：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MYSQL-事务处理-主要有两种方法："><span class="nav-text">MYSQL 事务处理 主要有两种方法：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-视图（将经常使用的-SELECT-语句做成视图。）"><span class="nav-text">13.视图（将经常使用的 SELECT 语句做成视图。）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-子查询"><span class="nav-text">14.子查询</span></a></li></ol></div>
             
 
           </div>
